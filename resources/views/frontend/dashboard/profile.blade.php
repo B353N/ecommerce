@@ -77,7 +77,7 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="account-creation">
                         <div class="lp-title">
-                            <h3>Password Change</h3>
+                            <h3>Change your password</h3>
                         </div>
                         <div class="lp-left-text">
                             <p>You can change your password</p>
