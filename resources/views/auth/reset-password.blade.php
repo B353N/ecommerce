@@ -1,39 +1,93 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
-        @csrf
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+@extends('frontend.layouts.master')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+@section('content')
+    <!--breadcrumb start-->
+
+    <div class="breadcrumbs-wrapper breadcumbs-bg1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcrumbs breadcrumbs-style1 sep1 posr">
+                        <ul>
+                            <li>
+                                <div class="breadcrumbs-icon1">
+                                    <a href="/"  title="Return to home"><i class="fa fa-home"></i></a>
+                                </div>
+                            </li>
+                            <li> New Password Set</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <!--breadcrumb end-->
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+    <!--login top heading start-->
+
+    <div class="cart-top-heading">
+        <div class="container">
+            <div class="summery-top">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="cart-sumttl">
+                            <h3> New Password Set</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <!--login top heading end-->
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+    <!--Cart start end-->
+    <div class="lp-email-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="account-creation">
+                        <div class="lp-title">
+                            <h3>New Password Set</h3>
+                        </div>
+                        <form method="POST" action="{{ route('password.store') }}" id="reset-password">
+                            @csrf
+                            <!-- Password Reset Token -->
+                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                            <!-- Email Address -->
+                            <div class="lp-input">
+                                <label for="email">Email address</label>
+                                <input type="email" id="email" name="email" value="{{old('email', $request->email)}}" required autocomplete="username"/>
+                            </div>
+                            <!-- Password -->
+                            <div class="lp-input">
+                                <label for="password">New Password</label>
+                                <input type="password" id="password" name="password"  required autocomplete="new-password"/>
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="lp-input">
+                                <label for="password_confirmation">Confirm New Password</label>
+                                <input type="password" id="password_confirmation" name="password_confirmation"  required autocomplete="new-password"/>
+                            </div>
+                        </form>
+                        <div class=" lp-account-btn btn-ac ">
+                            <a href="javascript:;" onclick="document.getElementById('reset-password').submit();"><i class="fa fa-user" aria-hidden="true"></i> Change Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Reset Password') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <!--Brand slider area css start-->
+
+    @include('frontend.home.sections.brands')
+
+    <!--Brand slider area css end-->
+
+    <!--Main shop area end-->
+
+    <!--Hair top banner end-->
+@endsection
+

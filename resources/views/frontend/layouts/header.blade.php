@@ -5,12 +5,13 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="header-login posr">
                         <ul>
-                            <li><a href="my-account.html">My Account</a>
+                            @auth()
+                            <li><a href="{{route('dashboard')}}">My Account</a>
                             </li>
-                            <li><a href="wishlist.html">My wishlist</a>
+                            @else
+                            <li><a href="{{route('login')}}">Login/Sign Up</a>
                             </li>
-                            <li><a href="login.html">Login</a>
-                            </li>
+                            @endauth
                         </ul>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="header-logo">
-                        <a href="index.html"><img src="{{asset('/frontend/images/logo_1.jpeg')}}" alt="domino" />
+                        <a href="{{route('home')}}"><img src="{{asset('/frontend/images/logo_1.jpeg')}}" alt="domino" />
                         </a>
                     </div>
                 </div>
