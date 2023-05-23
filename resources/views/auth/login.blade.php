@@ -40,29 +40,6 @@
     </div>
     <!--login top heading end-->
 
-    <!--login start-->
-    <div class="cart-sum-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="progress-summery text-center">
-                        <ul class="progress-steps">
-                            <li class="steps-item  litext is-active"><a href="cart.html">01. Cart</a>
-                            </li>
-                            <li class="steps-item is-active"><a href="login.html">02. Sign in</a>
-                            </li>
-                            <li class="steps-item"><a href="address.html">03. Address</a>
-                            </li>
-                            <li class="steps-item"><a href="shipping.html">04. Shipping</a>
-                            </li>
-                            <li class="steps-item"><a href="payment.html">05. Payment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--Cart start end-->
     <div class="lp-email-area">

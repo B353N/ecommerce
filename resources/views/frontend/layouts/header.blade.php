@@ -6,7 +6,7 @@
                     <div class="header-login posr">
                         <ul>
                             @auth()
-                            <li><a href="{{route('dashboard')}}">My Account</a>
+                            <li><a href="{{route('user.dashboard')}}">My Account</a>
                             </li>
                             @else
                             <li><a href="{{route('login')}}">Login/Sign Up</a>

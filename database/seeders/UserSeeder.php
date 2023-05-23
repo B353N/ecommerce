@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'email' => 'admin@prowebsite.vip',
                 'role' => 'admin',
                 'status' => 'active',
-                'password' => bcrypt('RumenSlavov33')
+                'password' => bcrypt('password')
             ],
             [
                 'name' => 'Demo Vendor',
