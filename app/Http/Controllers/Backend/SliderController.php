@@ -7,9 +7,11 @@ use App\Models\Slider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Traids\ImageUploadTrait;
 
 class SliderController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      */
@@ -31,8 +33,9 @@ class SliderController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
-           //'image' => ['required', 'image', 'max: 200'],
+            'image' => ['required', 'image', 'max: 2000'],
             'h4' => ['string', 'max: 200'],
             'h2' => ['string', 'max: 200'],
             'h1' => ['string', 'max: 100'],
@@ -43,11 +46,21 @@ class SliderController extends Controller
 
         $slider = new Slider();
 
+        /** Handle file upload */
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+        /** @var image $slider image */
+        $slider->image = $imagePath;
+        /** @var h4 $slider small text in slider */
         $slider->h4 = $request->h4;
+        /** @var h2 $slider middle text in slider */
         $slider->h2 = $request->h2;
+        /** @var h1 $slider big text in slider get from $request h1 */
         $slider->h1 = $request->h1;
+        /** @var btn_url $slider url */
         $slider->btn_url = $request->btn_url;
+        /** @var serial $slider order number */
         $slider->serial = $request->serial;
+        /** @var status $slider status boolean */
         $slider->status = $request->status;
         $slider->save();
 
