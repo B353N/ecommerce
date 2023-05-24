@@ -109,7 +109,57 @@ class SliderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'image' => ['nullable', 'image', 'max: 2000'],
+            'h4' => ['string', 'max: 200'],
+            'h2' => ['string', 'max: 200'],
+            'h1' => ['string', 'max: 100'],
+            'btn_url' => ['required', 'url'],
+            'serial' => ['required', 'integer'],
+            'status' => ['required']
+        ]);
+
+        $slider = Slider::findOrFail($id);
+
+        /** Handle file upload */
+        $imagePath = $this->updateImage($request, 'image', 'uploads', $slider->image);
+        /** @var image $slider image */
+        $slider->image = $imagePath;
+        /**
+         * @var h4 $slider small text in slider
+         * @var h4 $request get h4 text from request
+         */
+        $slider->h4 = $request->h4;
+        /**
+         * @var h2 $slider middle text in slider
+         * @var h2 $request get h2 text from request
+         */
+        $slider->h2 = $request->h2;
+        /**
+         * @var h1 $slider big text in slider get from $request h1
+         * @var h1 $request get big text from request
+         */
+        $slider->h1 = $request->h1;
+        /**
+         * @var btn_url $slider url
+         * @var btn_url $request get url from request
+         */
+        $slider->btn_url = $request->btn_url;
+        /**
+         * @var serial $slider order number
+         * @var serial $request get order number from request
+         */
+        $slider->serial = $request->serial;
+        /**
+         * @var status $slider status boolean
+         * @var status $request get status from request
+         */
+        $slider->status = $request->status;
+        $slider->save();
+
+        toastr('Your Slider Is Updated!', 'success');
+
+        return redirect()->route('admin.slider.index');
     }
 
     /**
