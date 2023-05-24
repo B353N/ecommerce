@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\SliderDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Traids\ImageUploadTrait;
+use App\Traids\imageUploadTrait;
 
 class SliderController extends Controller
 {
-    use ImageUploadTrait;
+    use imageUploadTrait;
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(SliderDataTable $dataTable)
     {
-        return view('admin.slider.index');
+        return $dataTable->render('admin.slider.index');
     }
 
     /**
@@ -50,17 +51,35 @@ class SliderController extends Controller
         $imagePath = $this->uploadImage($request, 'image', 'uploads');
         /** @var image $slider image */
         $slider->image = $imagePath;
-        /** @var h4 $slider small text in slider */
+        /**
+         * @var h4 $slider small text in slider
+         * @var h4 $request get h4 text from request
+         */
         $slider->h4 = $request->h4;
-        /** @var h2 $slider middle text in slider */
+        /**
+         * @var h2 $slider middle text in slider
+         * @var h2 $request get h2 text from request
+         */
         $slider->h2 = $request->h2;
-        /** @var h1 $slider big text in slider get from $request h1 */
+        /**
+         * @var h1 $slider big text in slider get from $request h1
+         * @var h1 $request get big text from request
+         */
         $slider->h1 = $request->h1;
-        /** @var btn_url $slider url */
+        /**
+         * @var btn_url $slider url
+         * @var btn_url $request get url from request
+         */
         $slider->btn_url = $request->btn_url;
-        /** @var serial $slider order number */
+        /**
+         * @var serial $slider order number
+         * @var serial $request get order number from request
+         */
         $slider->serial = $request->serial;
-        /** @var status $slider status boolean */
+        /**
+         * @var status $slider status boolean
+         * @var status $request get status from request
+         */
         $slider->status = $request->status;
         $slider->save();
 
@@ -79,9 +98,10 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $slider = Slider::findOrFail($id);
+        return view('admin.slider.edit', compact('slider'));
     }
 
     /**
