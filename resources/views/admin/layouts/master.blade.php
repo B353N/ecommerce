@@ -119,20 +119,23 @@
                     $.ajax({
                         type: 'DELETE',
                         url: deleteUrl,
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 
                         success: function (data){
                             if(data.status == 'success'){
                                 Swal.fire(
                                     'Deleted!',
-                                    data.message
+                                    data.message,
+                                    'success'
                                 )
+                                window.location.reload();
                             }else if(data.status == 'error'){
                                 Swal.fire(
                                     'Cant Deleted!',
                                     data.message
                                 )
                             }
-                            window.location.reload();
+
                         },
                         error:function (xhr, status, error){
                             console.log(error)
