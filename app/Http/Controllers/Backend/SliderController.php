@@ -124,7 +124,7 @@ class SliderController extends Controller
         /** Handle file upload */
         $imagePath = $this->updateImage($request, 'image', 'uploads', $slider->image);
         /** @var image $slider image */
-        $slider->image = $imagePath;
+        $slider->image = empty(!$imagePath) ? $imagePath : $slider->image;
         /**
          * @var h4 $slider small text in slider
          * @var h4 $request get h4 text from request
