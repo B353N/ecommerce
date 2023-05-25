@@ -19,6 +19,7 @@
                     <span>Manage Website</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.slider.index') }}">Slider</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.homeOffers.index') }}">Home Offers</a></li>
                 </ul>
             </li>
 
