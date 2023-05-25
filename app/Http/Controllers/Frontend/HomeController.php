@@ -12,8 +12,9 @@ class HomeController extends Controller
 {
     public function index(): View
     {
+        // Invoking that static method
         $sliders = Slider::where('status', 1)->orderBy('serial', 'asc')->get();
-        
+
         return view('frontend.home.home', compact('sliders'));
     }
 }
