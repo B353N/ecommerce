@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\HomeOffersController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SliderController;
@@ -17,4 +18,7 @@ Route::post('profile/update/password', [ProfileController::class, 'updatePasswor
 
 /** Slider Routes */
 Route::resource('slider', SliderController::class);
+/** Home Offers Routes */
 Route::resource('homeOffers', HomeOffersController::class);
+/** Category Route */
+Route::resource('category', CategoryController::class);

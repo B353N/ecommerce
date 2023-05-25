@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use function Termwind\render;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(CategoryDataTable $dataTable)
     {
-        //
+       return $dataTable->render('admin.category.index');
     }
 
     /**
