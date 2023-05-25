@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static findOrFail(string $id)
+ * @method static where(string $string, int $int)
  */
 class Slider extends Model
 {

@@ -37,9 +37,9 @@ class SliderController extends Controller
 
         $request->validate([
             'image' => ['required', 'image', 'max: 2000'],
-            'h4' => ['string', 'max: 200'],
-            'h2' => ['string', 'max: 200'],
-            'h1' => ['string', 'max: 100'],
+            'h4' => ['string', 'max: 200', 'nullable'],
+            'h2' => ['string', 'max: 200', 'nullable'],
+            'h1' => ['string', 'max: 100', 'nullable'],
             'btn_url' => ['required', 'url'],
             'serial' => ['required', 'integer'],
             'status' => ['required']
