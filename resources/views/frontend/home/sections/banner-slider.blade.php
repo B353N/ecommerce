@@ -2,8 +2,9 @@
 <div class="slider-container">
     <!-- Slider Image -->
     <div id="mainSlider" class="nivoSlider slider-image">
-        <img src="{{ asset('frontend/images/slider/slide1.jpeg') }}" alt="main slider" title="#htmlcaption1" />
-        <img src="{{ asset('frontend/images/slider/slide2.jpeg') }}" alt="main slider" title="#htmlcaption2" />
+        @foreach ($sliders as $slider)
+            <img src="{{ asset($slider->image) }}" alt="main slider" title="#htmlcaption1" />
+        @endforeach
     </div>
     @foreach ($sliders as $slider)
         <!-- Slider Caption -->
