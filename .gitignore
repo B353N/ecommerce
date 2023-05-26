@@ -7,10 +7,13 @@
 /storage/*.key
 /vendor
 /.vscode-server
+/logs
+/public_html
 .env
 .env.backup
 .env.production
 .phpunit.result.cache
+.gitconfig
 Homestead.json
 Homestead.yaml
 auth.json
