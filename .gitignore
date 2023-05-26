@@ -9,6 +9,10 @@
 /.vscode-server
 /logs
 /public_html
+/.ssh
+/.dotnet
+/.cache
+.wget-hsts
 .env
 .env.backup
 .env.production
