@@ -31,7 +31,7 @@
                                     <label>Icon</label>
                                     <div>
                                         <button class="btn btn-primary" data-selected-class="btn-danger"
-                                            data-unselected-class="btn-info" role="iconpicker"></button>
+                                            data-unselected-class="btn-info" role="iconpicker" name="icon"></button>
                                     </div>
                                 </div>
                                 <div class="form-group">

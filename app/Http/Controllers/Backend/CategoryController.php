@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Str;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 use function Termwind\render;
 
@@ -32,7 +35,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'icon' => ['required', 'not_in:empty'],
+            'name' => ['required', 'max:200', 'unique:categories,name'],
+            'status' => ['boolean']
+        ]);
+
+        $category = new Category();
+
+        $category->icon = $request->icon;
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->status = $request->status;
+        $category->save();
+
+        toastr('Category Create Successfull', 'success');
+
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -48,7 +67,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -56,7 +76,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'icon' => ['required', 'not_in:empty'],
+            'name' => ['required', 'max:200', 'unique:categories,name'],
+            'status' => ['boolean']
+        ]);
+
+        $category = Category::findOrFail($id);
+
+        $category->icon = $request->icon;
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->status = $request->status;
+        $category->save();
+
+        toastr('Your Category Is Updated!', 'success');
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -64,6 +99,9 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return response(['status' => 'success', 'message' => 'Category Deleted Successfully']);
     }
 }

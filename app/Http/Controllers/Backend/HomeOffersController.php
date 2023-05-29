@@ -78,7 +78,7 @@ class HomeOffersController extends Controller
         $homeOffer->text = $request->text;
         $homeOffer->save();
 
-        toastr('Your Home Offer Is Created!', 'success');
+        toastr('Your Home Offer Is Updated!', 'success');
         return redirect()->route('admin.homeOffers.index');
     }
 

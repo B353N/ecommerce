@@ -22,8 +22,17 @@ class CategoryDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'category.action')
-            ->setRowId('id');
+        ->addColumn('action', function ($query){
+            $editBtn = "<a href='".route('admin.category.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i> Edit</a>";
+            $deleteBtn = "<a href='".route('admin.category.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash'></i> Delete</a>";
+
+            return $editBtn.$deleteBtn;
+         })
+         ->addColumn('icon', function($query){
+            return '<i style="font-size:30px;" class="'.$query->icon.'"></i>';
+         })
+         ->rawColumns(['action', 'icon'])
+         ->setRowId('id');
     }
 
     /**
@@ -62,15 +71,15 @@ class CategoryDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('id'),
+            Column::make('icon'),
+            Column::make('name'),
+            Column::make('status'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(180)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 
