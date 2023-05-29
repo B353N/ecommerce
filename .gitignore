@@ -12,6 +12,10 @@
 /.ssh
 /.dotnet
 /.cache
+/.local
+/.dotnet
+/.config
+/.cache
 .wget-hsts
 .env
 .env.backup

@@ -13,13 +13,13 @@
 
         <div class="section-body">
             <h2 class="section-title">Create Category</h2>
-            <p class="section-lead">From here you can modify top home page slider</p>
+            <p class="section-lead">From here you can create new category</p>
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Slider Content</h4>
+                            <h4>Category Content</h4>
                             <div class="card-header-action">
 
                             </div>

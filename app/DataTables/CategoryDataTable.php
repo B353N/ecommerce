@@ -31,7 +31,14 @@ class CategoryDataTable extends DataTable
          ->addColumn('icon', function($query){
             return '<i style="font-size:30px;" class="'.$query->icon.'"></i>';
          })
-         ->rawColumns(['action', 'icon'])
+         ->addColumn('status', function($query){
+            $button = '<label class="custom-switch mt-2">
+                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                        <span class="custom-switch-indicator"></span>
+                    </label>';
+            return $button;
+         })
+         ->rawColumns(['action', 'icon','status'])
          ->setRowId('id');
     }
 
@@ -53,7 +60,7 @@ class CategoryDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
@@ -71,10 +78,10 @@ class CategoryDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('id'),
+            Column::make('id')->width(100),
             Column::make('icon'),
             Column::make('name'),
-            Column::make('status'),
+            Column::make('status')->width(100),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
