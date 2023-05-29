@@ -57,7 +57,7 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="https://prowebsite.vip">Digital
+                    Copyright &copy; 2023 <div class="bullet"></div> Created By <a href="https://prowebsite.vip">Digital
                         Agency ProWebsite</a>
                 </div>
                 <div class="footer-right">
