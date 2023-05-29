@@ -12,8 +12,8 @@
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Add/Edit Slider Content</h2>
-            <p class="section-lead">From here you can modify top home page slider</p>
+            <h2 class="section-title">Add/Edit Category Content</h2>
+            <p class="section-lead">On this page you can edit shop categories</p>
 
             <div class="row">
                 <div class="col-12">
@@ -21,7 +21,7 @@
                         <div class="card-header">
                             <h4>Slider Content</h4>
                             <div class="card-header-action">
-                                <a href="{{ route('admin.slider.create') }}" class="btn btn-primary"><i
+                                <a href="{{ route('admin.category.create') }}" class="btn btn-primary"><i
                                         class="far fa-plus"></i> Create New</a>
                             </div>
                         </div>
