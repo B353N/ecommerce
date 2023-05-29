@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Response;
 use Str;
 use Symfony\Component\VarDumper\Caster\RedisCaster;
 
@@ -103,5 +104,15 @@ class CategoryController extends Controller
         $category->delete();
 
         return response(['status' => 'success', 'message' => 'Category Deleted Successfully']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $category = Category::findOrFail($request->id);
+
+        $category->status = $request->isChecked == 'true' ? 1 : 0;
+        $category->save();
+
+        return response(['message' => 'Status has been updated']);
     }
 }

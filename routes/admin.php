@@ -21,4 +21,5 @@ Route::resource('slider', SliderController::class);
 /** Home Offers Routes */
 Route::resource('homeOffers', HomeOffersController::class);
 /** Category Route */
+Route::put('change-status', [CategoryController::class, 'changeStatus'])->name('category.change-status');
 Route::resource('category', CategoryController::class);
