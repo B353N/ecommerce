@@ -122,7 +122,7 @@
                 <div class="col-lg-9 col-md-10 hidden-sm">
                     <nav>
                         <ul class="main-menu">
-                            <li class="active"><a href="{{ route('home') }}">Home</a>
+                            <li class="{{ setActive(['home']) }}"><a href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="mega-parent"><a href="shop.html">Shop <i class="zmdi zmdi-chevron-down"></i></a>
                                 <div class="mega-menu-area hp1-style1">
