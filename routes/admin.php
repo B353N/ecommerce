@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\HomeOffersController;
 use App\Http\Controllers\Backend\ProfileController;
@@ -21,9 +22,13 @@ Route::post('profile/update/password', [ProfileController::class, 'updatePasswor
 Route::resource('slider', SliderController::class);
 /** Home Offers Routes */
 Route::resource('homeOffers', HomeOffersController::class);
-/** Category Route */
+/** Category Routes */
 Route::put('change-status', [CategoryController::class, 'changeStatus'])->name('category.change-status');
 Route::resource('category', CategoryController::class);
-/** Sub Category Route */
+/** Sub Category Routes */
 Route::put('subcategory/change-status', [SubCategoryController::class, 'changeStatus'])->name('sub-category.change-status');
 Route::resource('sub-category', SubCategoryController::class);
+/** Brand Routes */
+Route::put('brand/change-feature', [BrandController::class, 'changeFeature'])->name('brand.change-feature');
+Route::put('brand/change-status', [BrandController::class, 'changeStatus'])->name('brand.change-status');
+Route::resource('brand', BrandController::class);
