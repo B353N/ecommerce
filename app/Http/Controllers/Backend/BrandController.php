@@ -80,7 +80,27 @@ class BrandController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'logo' => ['nullable','image', 'max:2000'],
+            'name' => ['required', 'max:200'],
+            'feature' => ['required'],
+            'status' => ['required']
+        ]);
+
+        $brand = Brand::findOrFail($id);
+
+        /** Handle file upload */
+        $imagePath = $this->updateImage($request, 'logo', 'uploads', $brand->logo);
+        /** @var logo $slider image */
+        $brand->logo = empty(!$imagePath) ? $imagePath : $brand->logo;
+        $brand->name = $request->name;
+        $brand->slug = Str::slug($request->name);
+        $brand->feature = $request->feature;
+        $brand->status = $request->status;
+        $brand->save();
+
+        toastr('Your brand is updated successfull!', 'success');
+        return redirect()->route('admin.brand.index');
     }
 
     /**
@@ -88,7 +108,11 @@ class BrandController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $this->deleteImage($brand->logo);
+        $brand->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfull!']);
     }
 
     public function changeStatus(Request $request)

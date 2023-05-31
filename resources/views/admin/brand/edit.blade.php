@@ -23,7 +23,7 @@
                             <h4>Create Brand</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.slider.update', $brand->id) }}" method="POST"
+                            <form action="{{ route('admin.brand.update', $brand->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -54,7 +54,7 @@
                                         <option {{ $brand->status == 0 ? 'selected' : '' }} value="0">Inactive</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
                     </div>
