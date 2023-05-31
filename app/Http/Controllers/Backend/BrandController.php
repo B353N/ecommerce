@@ -52,6 +52,7 @@ class BrandController extends Controller
         $brand->status = $request->status;
         $brand->save();
 
+
         toastr('Your brand is created successfull!', 'success');
         return redirect()->route('admin.brand.index');
 
@@ -124,6 +125,7 @@ class BrandController extends Controller
 
         return response(['message' => 'Status has been updated']);
     }
+
     public function changeFeature(Request $request)
     {
         $brand = Brand::findOrFail($request->id);
