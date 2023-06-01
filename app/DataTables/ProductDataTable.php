@@ -22,8 +22,31 @@ class ProductDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'product.action')
-            ->setRowId('id');
+        ->addColumn('action', function ($query){
+            $editBtn = "<a href='".route('admin.product.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i> Edit</a>";
+            $deleteBtn = "<a href='".route('admin.product.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash'></i> Delete</a>";
+
+            return $editBtn.$deleteBtn;
+         })
+         ->addColumn('status', function($query){
+            if($query->status == 1){
+            $button = '<label class="custom-switch mt-2">
+                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status">
+                        <span class="custom-switch-indicator"></span>
+                    </label>';
+                }else{
+                    $button = '<label class="custom-switch mt-2">
+                        <input type="checkbox" name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status">
+                        <span class="custom-switch-indicator"></span>
+                    </label>';
+                }
+            return $button;
+         })
+         ->addColumn('thumb_image', function ($query){
+            return $img = "<img width='100px' src='".asset($query->thumb_image)."' />";
+         })
+         ->rawColumns(['action', 'thumb_image','status'])
+         ->setRowId('id');
     }
 
     /**
@@ -62,15 +85,17 @@ class ProductDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('id'),
+            Column::make('thumb_image'),
+            Column::make('name'),
+            Column::make('qty'),
+            Column::make('price'),
+            Column::make('offer_price'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(180)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 
