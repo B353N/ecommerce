@@ -10,7 +10,9 @@ use App\Models\Product;
 use App\Models\SubCategory;
 use App\Traids\imageUploadTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View as FacadesView;
 use Str;
+use View;
 
 class ProductController extends Controller
 {
@@ -99,7 +101,10 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categories = Category::all();
+        $product = Product::findOrFail($id);
+
+        return view('admin.product.edit', compact('product', 'categories', 'subCategories'));
     }
 
     /**

@@ -25,8 +25,17 @@ class ProductDataTable extends DataTable
         ->addColumn('action', function ($query){
             $editBtn = "<a href='".route('admin.product.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i> Edit</a>";
             $deleteBtn = "<a href='".route('admin.product.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash'></i> Delete</a>";
-
-            return $editBtn.$deleteBtn;
+            $moreBtn = '                    <div class="dropdown d-inline">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-cog"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item has-icon" href="#"><i class="far fa-heart"></i> Action</a>
+              <a class="dropdown-item has-icon" href="#"><i class="far fa-file"></i> Another action</a>
+              <a class="dropdown-item has-icon" href="#"><i class="far fa-clock"></i> Something else here</a>
+            </div>
+          </div>';
+            return $editBtn.$deleteBtn.$moreBtn;
          })
          ->addColumn('status', function($query){
             if($query->status == 1){
@@ -94,7 +103,7 @@ class ProductDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(180)
+                  ->width(250)
                   ->addClass('text-center'),
         ];
     }
