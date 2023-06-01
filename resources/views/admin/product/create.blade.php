@@ -56,13 +56,103 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" class='form-control' name="name" value="{{ old('name') }}">
+                                    <label for="inputState">Brand</label>
+                                    <select id="inputState" class="form-control" name="brand">
+                                        <option value="">Select</option>
+                                        @foreach ($brands as $brand)
+                                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>SKU</label>
+                                    <input type="text" class='form-control' name="sku" value="{{ old('sku') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input type="text" class='form-control' name="price" value="{{ old('price') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Offer Price</label>
+                                    <input type="text" class='form-control' name="offer_price"
+                                        value="{{ old('offer_price') }}">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Offer Start Date</label>
+                                            <input type="text" class='form-control datepicker' name="offer_start_date"
+                                                value="{{ old('offer_start_date') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Offer End Date</label>
+                                            <input type="text" class='form-control datepicker' name="offer_end_date"
+                                                value="{{ old('offer_end_date') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Stock Quantity</label>
+                                    <input type="number" min="0" class='form-control' name="qty"
+                                        value="{{ old('qty') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Video YT link</label>
+                                    <input type="text" class='form-control' name="video_link"
+                                        value="{{ old('video_link') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Short Descriptio</label>
+                                    <textarea class='form-control' name="short_description" value="{{ old('short_description') }}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Long Descriptio</label>
+                                    <textarea class='form-control summernote' name="long_description" value="{{ old('long_description') }}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="control-label mt-2">Produtct Features</div>
+                                    <div>
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="is_top" class="custom-switch-input"
+                                                @if (old('is_top') != null) checked @endif>
+                                            <span class="custom-switch-indicator"></span>
+                                            <span class="custom-switch-description">Is Top? (On Home Page)</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="is_best" class="custom-switch-input"
+                                                @if (old('is_best') != null) checked @endif>
+                                            <span class="custom-switch-indicator"></span>
+                                            <span class="custom-switch-description">Is Best? (Label)</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="custom-switch">
+                                            <input type="checkbox" name="is_feature" class="custom-switch-input"
+                                                @if (old('is_feature') != null) checked @endif>
+                                            <span class="custom-switch-indicator"></span>
+                                            <span class="custom-switch-description">Feature? (Priority)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>SEO Title</label>
+                                    <input type="text" class='form-control' name="seo_title"
+                                        value="{{ old('seo_title') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>SEO Description</label>
+                                    <textarea class='form-control' name="seo_description" value="{{ old('seo_description') }}"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputState">Status</label>
                                     <select id="inputState" class="form-control" name="status">
                                         <option value="">Select</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Create</button>
