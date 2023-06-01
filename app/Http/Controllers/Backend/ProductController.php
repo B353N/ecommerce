@@ -103,8 +103,10 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $product = Product::findOrFail($id);
+        $brands = Brand::all();
+        $subCategories = SubCategory::where('category_id', $product->category_id)->get();
 
-        return view('admin.product.edit', compact('product', 'categories', 'subCategories'));
+        return view('admin.product.edit', compact('product', 'categories', 'brands', 'subCategories'));
     }
 
     /**

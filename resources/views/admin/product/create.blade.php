@@ -27,7 +27,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label>Image</label>
-                                    <input type="file" class='form-control' name="image">
+                                    <input type="file" class='form-control' name="image" value="{{ old('image') }}">
                                 </div>
 
                                 <div class="form-group">
@@ -105,11 +105,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Short Descriptio</label>
-                                    <textarea class='form-control' name="short_description" value="{{ old('short_description') }}"></textarea>
+                                    <textarea class='form-control' name="short_description">{{ old('short_description') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Long Descriptio</label>
-                                    <textarea class='form-control summernote' name="long_description" value="{{ old('long_description') }}"></textarea>
+                                    <textarea class='form-control summernote' name="long_description">{{ old('long_description') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <div class="control-label mt-2">Produtct Features</div>
@@ -145,7 +145,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <textarea class='form-control' name="seo_description" value="{{ old('seo_description') }}"></textarea>
+                                    <textarea class='form-control' name="seo_description">{{ old('seo_description') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputState">Status</label>

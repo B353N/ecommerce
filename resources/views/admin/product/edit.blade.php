@@ -23,7 +23,8 @@
                             <h4>Edit Product</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.product.update') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.product.update', $product->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
@@ -58,6 +59,10 @@
                                             <label for="inputState">Sub Category</label>
                                             <select id="inputState" class="form-control sub-category" name="subCategory">
                                                 <option value="">Select</option>
+                                                @foreach ($subCategories as $subCategory)
+                                                    <option @if ($subCategory->id == $product->sub_category_id) selected @endif
+                                                        value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -91,41 +96,41 @@
                                         <div class="form-group">
                                             <label>Offer Start Date</label>
                                             <input type="text" class='form-control datepicker' name="offer_start_date"
-                                                value="{{ old('offer_start_date') }}">
+                                                value="{{ $product->offer_start }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Offer End Date</label>
                                             <input type="text" class='form-control datepicker' name="offer_end_date"
-                                                value="{{ old('offer_end_date') }}">
+                                                value="{{ $product->offer_end }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Stock Quantity</label>
                                     <input type="number" min="0" class='form-control' name="qty"
-                                        value="{{ old('qty') }}">
+                                        value="{{ $product->qty }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Video YT link</label>
                                     <input type="text" class='form-control' name="video_link"
-                                        value="{{ old('video_link') }}">
+                                        value="{{ $product->video }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Short Descriptio</label>
-                                    <textarea class='form-control' name="short_description" value="{{ old('short_description') }}"></textarea>
+                                    <textarea class='form-control' name="short_description">{{ $product->short_description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Long Descriptio</label>
-                                    <textarea class='form-control summernote' name="long_description" value="{{ old('long_description') }}"></textarea>
+                                    <textarea class='form-control summernote' name="long_description">{{ $product->long_description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <div class="control-label mt-2">Produtct Features</div>
                                     <div>
                                         <label class="custom-switch">
                                             <input type="checkbox" name="is_top" class="custom-switch-input"
-                                                @if (old('is_top') != null) checked @endif>
+                                                @if ($product->is_top != null) checked @endif>
                                             <span class="custom-switch-indicator"></span>
                                             <span class="custom-switch-description">Is Top? (On Home Page)</span>
                                         </label>
@@ -133,7 +138,7 @@
                                     <div>
                                         <label class="custom-switch">
                                             <input type="checkbox" name="is_best" class="custom-switch-input"
-                                                @if (old('is_best') != null) checked @endif>
+                                                @if ($product->is_best != null) checked @endif>
                                             <span class="custom-switch-indicator"></span>
                                             <span class="custom-switch-description">Is Best? (Label)</span>
                                         </label>
@@ -141,7 +146,7 @@
                                     <div>
                                         <label class="custom-switch">
                                             <input type="checkbox" name="is_feature" class="custom-switch-input"
-                                                @if (old('is_feature') != null) checked @endif>
+                                                @if ($product->is_feature != null) checked @endif>
                                             <span class="custom-switch-indicator"></span>
                                             <span class="custom-switch-description">Feature? (Priority)</span>
                                         </label>
@@ -150,17 +155,19 @@
                                 <div class="form-group">
                                     <label>SEO Title</label>
                                     <input type="text" class='form-control' name="seo_title"
-                                        value="{{ old('seo_title') }}">
+                                        value="{{ $product->seo_title }}">
                                 </div>
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <textarea class='form-control' name="seo_description" value="{{ old('seo_description') }}"></textarea>
+                                    <textarea class='form-control' name="seo_description">{{ $product->seo_description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputState">Status</label>
                                     <select id="inputState" class="form-control" name="status">
-                                        <option value="1">Active</option>
-                                        <option value="0">Inactive</option>
+                                        <option {{ $product->status == 1 ? 'selected' : '' }} value="1">Active
+                                        </option>
+                                        <option {{ $product->status == 0 ? 'selected' : '' }} value="0">Inactive
+                                        </option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Create</button>
