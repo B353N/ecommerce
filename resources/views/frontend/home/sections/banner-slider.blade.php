@@ -25,12 +25,12 @@
                         </div>
                         <div class="slide-one-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">
                             @if ($slider->h1 != '')
-                                <h1><span class="slide-text-big">70%</span>off</h1>
+                                <h1><span class="slide-text-big">{{ $slider->h1 }}</span></h1>
                             @endif
                         </div>
                         <div class="check-it-out slide2btn-check1 wow fadeInDown" data-wow-duration=".9s"
                             data-wow-delay="0.8s">
-                            <a class="btn-def-black" href="{{ $slider->btn_url }}">Shop now</a>
+                            <a class="btn-def-black" href="{{ $slider->btn_url }}">{{ __('en.Shop Now') }}</a>
                         </div>
                     </div>
                 </div>
