@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.1",
         "astrotomic/laravel-translatable": "^11.12",
+        "codezero/laravel-localized-routes": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
@@ -67,7 +68,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "codezero/composer-preload-files": true
         }
     },
     "minimum-stability": "stable",

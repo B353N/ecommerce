@@ -8405,6 +8405,19 @@
         {
                         \Illuminate\Translation\Translator::flushMacros();
         }
+                    /**
+         * 
+         *
+         * @see \CodeZero\UriTranslator\Macros\Lang\UriMacro::register()
+         * @param mixed $uri
+         * @param mixed $locale
+         * @param mixed $namespace
+         * @static 
+         */ 
+        public static function uri($uri, $locale = null, $namespace = null)
+        {
+                        return \Illuminate\Translation\Translator::uri($uri, $locale, $namespace);
+        }
          
     }
             /**
@@ -10510,6 +10523,56 @@
      */ 
         class Redirect {
                     /**
+         * Create a new redirect response to a named route.
+         *
+         * @param string $route
+         * @param mixed $parameters
+         * @param int $status
+         * @param array $headers
+         * @param string|null $locale
+         * @return \Illuminate\Http\RedirectResponse 
+         * @static 
+         */ 
+        public static function route($route, $parameters = [], $status = 302, $headers = [], $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
+                        return $instance->route($route, $parameters, $status, $headers, $locale);
+        }
+                    /**
+         * Create a new redirect response to a signed named route.
+         *
+         * @param string $route
+         * @param mixed $parameters
+         * @param \DateTimeInterface|\DateInterval|int|null $expiration
+         * @param int $status
+         * @param array $headers
+         * @param string|null $locale
+         * @return \Illuminate\Http\RedirectResponse 
+         * @static 
+         */ 
+        public static function signedRoute($route, $parameters = [], $expiration = null, $status = 302, $headers = [], $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
+                        return $instance->signedRoute($route, $parameters, $expiration, $status, $headers, $locale);
+        }
+                    /**
+         * Create a new redirect response to a signed named route.
+         *
+         * @param string $route
+         * @param \DateTimeInterface|\DateInterval|int|null $expiration
+         * @param mixed $parameters
+         * @param int $status
+         * @param array $headers
+         * @param string|null $locale
+         * @return \Illuminate\Http\RedirectResponse 
+         * @static 
+         */ 
+        public static function temporarySignedRoute($route, $expiration, $parameters = [], $status = 302, $headers = [], $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
+                        return $instance->temporarySignedRoute($route, $expiration, $parameters, $status, $headers, $locale);
+        }
+                    /**
          * Create a new redirect response to the previous location.
          *
          * @param int $status
@@ -10519,8 +10582,8 @@
          * @static 
          */ 
         public static function back($status = 302, $headers = [], $fallback = false)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->back($status, $headers, $fallback);
         }
                     /**
@@ -10532,8 +10595,8 @@
          * @static 
          */ 
         public static function refresh($status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->refresh($status, $headers);
         }
                     /**
@@ -10547,8 +10610,8 @@
          * @static 
          */ 
         public static function guest($path, $status = 302, $headers = [], $secure = null)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->guest($path, $status, $headers, $secure);
         }
                     /**
@@ -10562,8 +10625,8 @@
          * @static 
          */ 
         public static function intended($default = '/', $status = 302, $headers = [], $secure = null)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->intended($default, $status, $headers, $secure);
         }
                     /**
@@ -10577,8 +10640,8 @@
          * @static 
          */ 
         public static function to($path, $status = 302, $headers = [], $secure = null)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->to($path, $status, $headers, $secure);
         }
                     /**
@@ -10591,8 +10654,8 @@
          * @static 
          */ 
         public static function away($path, $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->away($path, $status, $headers);
         }
                     /**
@@ -10605,56 +10668,9 @@
          * @static 
          */ 
         public static function secure($path, $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->secure($path, $status, $headers);
-        }
-                    /**
-         * Create a new redirect response to a named route.
-         *
-         * @param string $route
-         * @param mixed $parameters
-         * @param int $status
-         * @param array $headers
-         * @return \Illuminate\Http\RedirectResponse 
-         * @static 
-         */ 
-        public static function route($route, $parameters = [], $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
-                        return $instance->route($route, $parameters, $status, $headers);
-        }
-                    /**
-         * Create a new redirect response to a signed named route.
-         *
-         * @param string $route
-         * @param mixed $parameters
-         * @param \DateTimeInterface|\DateInterval|int|null $expiration
-         * @param int $status
-         * @param array $headers
-         * @return \Illuminate\Http\RedirectResponse 
-         * @static 
-         */ 
-        public static function signedRoute($route, $parameters = [], $expiration = null, $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
-                        return $instance->signedRoute($route, $parameters, $expiration, $status, $headers);
-        }
-                    /**
-         * Create a new redirect response to a signed named route.
-         *
-         * @param string $route
-         * @param \DateTimeInterface|\DateInterval|int|null $expiration
-         * @param mixed $parameters
-         * @param int $status
-         * @param array $headers
-         * @return \Illuminate\Http\RedirectResponse 
-         * @static 
-         */ 
-        public static function temporarySignedRoute($route, $expiration, $parameters = [], $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
-                        return $instance->temporarySignedRoute($route, $expiration, $parameters, $status, $headers);
         }
                     /**
          * Create a new redirect response to a controller action.
@@ -10667,8 +10683,8 @@
          * @static 
          */ 
         public static function action($action, $parameters = [], $status = 302, $headers = [])
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->action($action, $parameters, $status, $headers);
         }
                     /**
@@ -10678,8 +10694,8 @@
          * @static 
          */ 
         public static function getUrlGenerator()
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->getUrlGenerator();
         }
                     /**
@@ -10690,8 +10706,8 @@
          * @static 
          */ 
         public static function setSession($session)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         $instance->setSession($session);
         }
                     /**
@@ -10701,20 +10717,20 @@
          * @static 
          */ 
         public static function getIntendedUrl()
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->getIntendedUrl();
         }
                     /**
          * Set the "intended" URL in the session.
          *
          * @param string $url
-         * @return \Illuminate\Routing\Redirector 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector 
          * @static 
          */ 
         public static function setIntendedUrl($url)
-        {
-                        /** @var \Illuminate\Routing\Redirector $instance */
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector $instance */
                         return $instance->setIntendedUrl($url);
         }
                     /**
@@ -10726,8 +10742,8 @@
          * @static 
          */ 
         public static function macro($name, $macro)
-        {
-                        \Illuminate\Routing\Redirector::macro($name, $macro);
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector::macro($name, $macro);
         }
                     /**
          * Mix another object into the class.
@@ -10739,8 +10755,8 @@
          * @static 
          */ 
         public static function mixin($mixin, $replace = true)
-        {
-                        \Illuminate\Routing\Redirector::mixin($mixin, $replace);
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector::mixin($mixin, $replace);
         }
                     /**
          * Checks if macro is registered.
@@ -10750,8 +10766,8 @@
          * @static 
          */ 
         public static function hasMacro($name)
-        {
-                        return \Illuminate\Routing\Redirector::hasMacro($name);
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        return \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector::hasMacro($name);
         }
                     /**
          * Flush the existing macros.
@@ -10760,8 +10776,8 @@
          * @static 
          */ 
         public static function flushMacros()
-        {
-                        \Illuminate\Routing\Redirector::flushMacros();
+        {            //Method inherited from \Illuminate\Routing\Redirector         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector::flushMacros();
         }
          
     }
@@ -14240,6 +14256,66 @@
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
         }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\HasLocalizedMacro::register()
+         * @param string $name
+         * @param string|null $locale
+         * @static 
+         */ 
+        public static function hasLocalized($name, $locale = null)
+        {
+                        return \Illuminate\Routing\Router::hasLocalized($name, $locale);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\IsFallbackMacro::register()
+         * @static 
+         */ 
+        public static function isFallback()
+        {
+                        return \Illuminate\Routing\Router::isFallback();
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\IsLocalizedMacro::register()
+         * @param mixed $patterns
+         * @param mixed $locales
+         * @static 
+         */ 
+        public static function isLocalized($patterns = null, $locales = '*')
+        {
+                        return \Illuminate\Routing\Router::isLocalized($patterns, $locales);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\LocalizedMacro::register()
+         * @param mixed $closure
+         * @param mixed $options
+         * @static 
+         */ 
+        public static function localized($closure, $options = [])
+        {
+                        return \Illuminate\Routing\Router::localized($closure, $options);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\LocalizedUrlMacro::register()
+         * @param mixed $locale
+         * @param mixed $parameters
+         * @param mixed $absolute
+         * @param mixed $keepQuery
+         * @static 
+         */ 
+        public static function localizedUrl($locale = null, $parameters = null, $absolute = true, $keepQuery = true)
+        {
+                        return \Illuminate\Routing\Router::localizedUrl($locale, $parameters, $absolute, $keepQuery);
+        }
          
     }
             /**
@@ -16197,14 +16273,61 @@
      */ 
         class URL {
                     /**
+         * Resolve the URL to a named route or a localized version of it.
+         *
+         * @param string $name
+         * @param array $parameters
+         * @param bool $absolute
+         * @param string|null $locale
+         * @return string 
+         * @static 
+         */ 
+        public static function route($name, $parameters = [], $absolute = true, $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->route($name, $parameters, $absolute, $locale);
+        }
+                    /**
+         * Create a signed route URL for a named route.
+         *
+         * @param string $name
+         * @param mixed $parameters
+         * @param \DateInterval|\DateTimeInterface|int|null $expiration
+         * @param bool $absolute
+         * @param string|null $locale
+         * @return string 
+         * @static 
+         */ 
+        public static function signedRoute($name, $parameters = [], $expiration = null, $absolute = true, $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->signedRoute($name, $parameters, $expiration, $absolute, $locale);
+        }
+                    /**
+         * Create a temporary signed route URL for a named route.
+         *
+         * @param string $name
+         * @param \DateTimeInterface|\DateInterval|int $expiration
+         * @param array $parameters
+         * @param bool $absolute
+         * @param string|null $locale
+         * @return string 
+         * @static 
+         */ 
+        public static function temporarySignedRoute($name, $expiration, $parameters = [], $absolute = true, $locale = null)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->temporarySignedRoute($name, $expiration, $parameters, $absolute, $locale);
+        }
+                    /**
          * Get the full URL for the current request.
          *
          * @return string 
          * @static 
          */ 
         public static function full()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->full();
         }
                     /**
@@ -16214,8 +16337,8 @@
          * @static 
          */ 
         public static function current()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->current();
         }
                     /**
@@ -16226,8 +16349,8 @@
          * @static 
          */ 
         public static function previous($fallback = false)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->previous($fallback);
         }
                     /**
@@ -16238,8 +16361,8 @@
          * @static 
          */ 
         public static function previousPath($fallback = false)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->previousPath($fallback);
         }
                     /**
@@ -16252,8 +16375,8 @@
          * @static 
          */ 
         public static function to($path, $extra = [], $secure = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->to($path, $extra, $secure);
         }
                     /**
@@ -16265,8 +16388,8 @@
          * @static 
          */ 
         public static function secure($path, $parameters = [])
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->secure($path, $parameters);
         }
                     /**
@@ -16278,8 +16401,8 @@
          * @static 
          */ 
         public static function asset($path, $secure = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->asset($path, $secure);
         }
                     /**
@@ -16290,8 +16413,8 @@
          * @static 
          */ 
         public static function secureAsset($path)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->secureAsset($path);
         }
                     /**
@@ -16304,8 +16427,8 @@
          * @static 
          */ 
         public static function assetFrom($root, $path, $secure = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->assetFrom($root, $path, $secure);
         }
                     /**
@@ -16316,40 +16439,9 @@
          * @static 
          */ 
         public static function formatScheme($secure = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->formatScheme($secure);
-        }
-                    /**
-         * Create a signed route URL for a named route.
-         *
-         * @param string $name
-         * @param mixed $parameters
-         * @param \DateTimeInterface|\DateInterval|int|null $expiration
-         * @param bool $absolute
-         * @return string 
-         * @throws \InvalidArgumentException
-         * @static 
-         */ 
-        public static function signedRoute($name, $parameters = [], $expiration = null, $absolute = true)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
-                        return $instance->signedRoute($name, $parameters, $expiration, $absolute);
-        }
-                    /**
-         * Create a temporary signed route URL for a named route.
-         *
-         * @param string $name
-         * @param \DateTimeInterface|\DateInterval|int $expiration
-         * @param array $parameters
-         * @param bool $absolute
-         * @return string 
-         * @static 
-         */ 
-        public static function temporarySignedRoute($name, $expiration, $parameters = [], $absolute = true)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
-                        return $instance->temporarySignedRoute($name, $expiration, $parameters, $absolute);
         }
                     /**
          * Determine if the given request has a valid signature.
@@ -16361,8 +16453,8 @@
          * @static 
          */ 
         public static function hasValidSignature($request, $absolute = true, $ignoreQuery = [])
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->hasValidSignature($request, $absolute, $ignoreQuery);
         }
                     /**
@@ -16374,8 +16466,8 @@
          * @static 
          */ 
         public static function hasValidRelativeSignature($request, $ignoreQuery = [])
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->hasValidRelativeSignature($request, $ignoreQuery);
         }
                     /**
@@ -16388,8 +16480,8 @@
          * @static 
          */ 
         public static function hasCorrectSignature($request, $absolute = true, $ignoreQuery = [])
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->hasCorrectSignature($request, $absolute, $ignoreQuery);
         }
                     /**
@@ -16400,24 +16492,9 @@
          * @static 
          */ 
         public static function signatureHasNotExpired($request)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->signatureHasNotExpired($request);
-        }
-                    /**
-         * Get the URL to a named route.
-         *
-         * @param string $name
-         * @param mixed $parameters
-         * @param bool $absolute
-         * @return string 
-         * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException
-         * @static 
-         */ 
-        public static function route($name, $parameters = [], $absolute = true)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
-                        return $instance->route($name, $parameters, $absolute);
         }
                     /**
          * Get the URL for a given route instance.
@@ -16430,8 +16507,8 @@
          * @static 
          */ 
         public static function toRoute($route, $parameters, $absolute)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->toRoute($route, $parameters, $absolute);
         }
                     /**
@@ -16445,8 +16522,8 @@
          * @static 
          */ 
         public static function action($action, $parameters = [], $absolute = true)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->action($action, $parameters, $absolute);
         }
                     /**
@@ -16457,8 +16534,8 @@
          * @static 
          */ 
         public static function formatParameters($parameters)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->formatParameters($parameters);
         }
                     /**
@@ -16470,8 +16547,8 @@
          * @static 
          */ 
         public static function formatRoot($scheme, $root = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->formatRoot($scheme, $root);
         }
                     /**
@@ -16484,8 +16561,8 @@
          * @static 
          */ 
         public static function format($root, $path, $route = null)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->format($root, $path, $route);
         }
                     /**
@@ -16496,8 +16573,8 @@
          * @static 
          */ 
         public static function isValidUrl($path)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->isValidUrl($path);
         }
                     /**
@@ -16508,8 +16585,8 @@
          * @static 
          */ 
         public static function defaults($defaults)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         $instance->defaults($defaults);
         }
                     /**
@@ -16519,8 +16596,8 @@
          * @static 
          */ 
         public static function getDefaultParameters()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->getDefaultParameters();
         }
                     /**
@@ -16531,8 +16608,8 @@
          * @static 
          */ 
         public static function forceScheme($scheme)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         $instance->forceScheme($scheme);
         }
                     /**
@@ -16543,32 +16620,32 @@
          * @static 
          */ 
         public static function forceRootUrl($root)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         $instance->forceRootUrl($root);
         }
                     /**
          * Set a callback to be used to format the host of generated URLs.
          *
          * @param \Closure $callback
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function formatHostUsing($callback)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->formatHostUsing($callback);
         }
                     /**
          * Set a callback to be used to format the path of generated URLs.
          *
          * @param \Closure $callback
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function formatPathUsing($callback)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->formatPathUsing($callback);
         }
                     /**
@@ -16578,8 +16655,8 @@
          * @static 
          */ 
         public static function pathFormatter()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->pathFormatter();
         }
                     /**
@@ -16589,8 +16666,8 @@
          * @static 
          */ 
         public static function getRequest()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->getRequest();
         }
                     /**
@@ -16601,44 +16678,44 @@
          * @static 
          */ 
         public static function setRequest($request)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         $instance->setRequest($request);
         }
                     /**
          * Set the route collection.
          *
          * @param \Illuminate\Routing\RouteCollectionInterface $routes
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function setRoutes($routes)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->setRoutes($routes);
         }
                     /**
          * Set the session resolver for the generator.
          *
          * @param callable $sessionResolver
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function setSessionResolver($sessionResolver)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->setSessionResolver($sessionResolver);
         }
                     /**
          * Set the encryption key resolver.
          *
          * @param callable $keyResolver
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function setKeyResolver($keyResolver)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->setKeyResolver($keyResolver);
         }
                     /**
@@ -16649,8 +16726,8 @@
          * @static 
          */ 
         public static function withKeyResolver($keyResolver)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->withKeyResolver($keyResolver);
         }
                     /**
@@ -16660,20 +16737,20 @@
          * @static 
          */ 
         public static function getRootControllerNamespace()
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->getRootControllerNamespace();
         }
                     /**
          * Set the root controller namespace.
          *
          * @param string $rootNamespace
-         * @return \Illuminate\Routing\UrlGenerator 
+         * @return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator 
          * @static 
          */ 
         public static function setRootControllerNamespace($rootNamespace)
-        {
-                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        /** @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator $instance */
                         return $instance->setRootControllerNamespace($rootNamespace);
         }
                     /**
@@ -16685,8 +16762,8 @@
          * @static 
          */ 
         public static function macro($name, $macro)
-        {
-                        \Illuminate\Routing\UrlGenerator::macro($name, $macro);
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator::macro($name, $macro);
         }
                     /**
          * Mix another object into the class.
@@ -16698,8 +16775,8 @@
          * @static 
          */ 
         public static function mixin($mixin, $replace = true)
-        {
-                        \Illuminate\Routing\UrlGenerator::mixin($mixin, $replace);
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator::mixin($mixin, $replace);
         }
                     /**
          * Checks if macro is registered.
@@ -16709,8 +16786,8 @@
          * @static 
          */ 
         public static function hasMacro($name)
-        {
-                        return \Illuminate\Routing\UrlGenerator::hasMacro($name);
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        return \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator::hasMacro($name);
         }
                     /**
          * Flush the existing macros.
@@ -16719,8 +16796,8 @@
          * @static 
          */ 
         public static function flushMacros()
-        {
-                        \Illuminate\Routing\UrlGenerator::flushMacros();
+        {            //Method inherited from \Illuminate\Routing\UrlGenerator         
+                        \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator::flushMacros();
         }
          
     }
@@ -18692,6 +18769,226 @@
      
 }
 
+    namespace CodeZero\LocalizedRoutes\Facades { 
+            /**
+     * LocaleConfig Facade
+     *
+     * @mixin \CodeZero\LocalizedRoutes\LocaleConfig
+     */ 
+        class LocaleConfig {
+                    /**
+         * Get the configured supported locales.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getSupportedLocales()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->getSupportedLocales();
+        }
+                    /**
+         * Set the supported locales.
+         *
+         * @param array $locales
+         * @return void 
+         * @static 
+         */ 
+        public static function setSupportedLocales($locales)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        $instance->setSupportedLocales($locales);
+        }
+                    /**
+         * Get the locale that should be omitted in the URI path.
+         *
+         * @return string|null 
+         * @static 
+         */ 
+        public static function getOmittedLocale()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->getOmittedLocale();
+        }
+                    /**
+         * Set the locale that should be omitted in the URI path.
+         *
+         * @param string|null $locale
+         * @return void 
+         * @static 
+         */ 
+        public static function setOmittedLocale($locale)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        $instance->setOmittedLocale($locale);
+        }
+                    /**
+         * Get the fallback locale.
+         *
+         * @return string|null 
+         * @static 
+         */ 
+        public static function getFallbackLocale()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->getFallbackLocale();
+        }
+                    /**
+         * Set the fallback locale.
+         *
+         * @param string|null $locale
+         * @return void 
+         * @static 
+         */ 
+        public static function setFallbackLocale($locale)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        $instance->setFallbackLocale($locale);
+        }
+                    /**
+         * Get the route action that holds a route's locale.
+         *
+         * @return string|null 
+         * @static 
+         */ 
+        public static function getRouteAction()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->getRouteAction();
+        }
+                    /**
+         * Set the route action that holds a route's locale.
+         *
+         * @param string $action
+         * @return string 
+         * @static 
+         */ 
+        public static function setRouteAction($action)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->setRouteAction($action);
+        }
+                    /**
+         * Get the locales (not the slugs or domains).
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getLocales()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->getLocales();
+        }
+                    /**
+         * Find the slug that belongs to the given locale.
+         *
+         * @param string $locale
+         * @return string|null 
+         * @static 
+         */ 
+        public static function findSlugByLocale($locale)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->findSlugByLocale($locale);
+        }
+                    /**
+         * Find the domain that belongs to the given locale.
+         *
+         * @param string $locale
+         * @return string|null 
+         * @static 
+         */ 
+        public static function findDomainByLocale($locale)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->findDomainByLocale($locale);
+        }
+                    /**
+         * Find the locale that belongs to the given slug.
+         *
+         * @param \CodeZero\LocalizedRoutes\?string $slug
+         * @return string|null 
+         * @static 
+         */ 
+        public static function findLocaleBySlug($slug)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->findLocaleBySlug($slug);
+        }
+                    /**
+         * Find the locale that belongs to the given domain.
+         *
+         * @param string $domain
+         * @return string|null 
+         * @static 
+         */ 
+        public static function findLocaleByDomain($domain)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->findLocaleByDomain($domain);
+        }
+                    /**
+         * Check if there are any locales configured.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasLocales()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->hasLocales();
+        }
+                    /**
+         * Check if there are only locales configured,
+         * and not custom slugs or domains.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasSimpleLocales()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->hasSimpleLocales();
+        }
+                    /**
+         * Check if custom slugs are configured.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasCustomSlugs()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->hasCustomSlugs();
+        }
+                    /**
+         * Check if custom domains are configured.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasCustomDomains()
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->hasCustomDomains();
+        }
+                    /**
+         * Check if the given locale is supported.
+         *
+         * @param string|null $locale
+         * @return bool 
+         * @static 
+         */ 
+        public static function isSupportedLocale($locale)
+        {
+                        /** @var \CodeZero\LocalizedRoutes\LocaleConfig $instance */
+                        return $instance->isSupportedLocale($locale);
+        }
+         
+    }
+     
+}
+
     namespace Flasher\Laravel\Facade { 
             /**
      * 
@@ -19508,6 +19805,102 @@
         public static function hasValidSignatureWhileIgnoring($ignoreQuery = [], $absolute = true)
         {
                         return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */ 
+        class Router {
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\HasLocalizedMacro::register()
+         * @param string $name
+         * @param string|null $locale
+         * @static 
+         */ 
+        public static function hasLocalized($name, $locale = null)
+        {
+                        return \Illuminate\Routing\Router::hasLocalized($name, $locale);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\IsFallbackMacro::register()
+         * @static 
+         */ 
+        public static function isFallback()
+        {
+                        return \Illuminate\Routing\Router::isFallback();
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\IsLocalizedMacro::register()
+         * @param mixed $patterns
+         * @param mixed $locales
+         * @static 
+         */ 
+        public static function isLocalized($patterns = null, $locales = '*')
+        {
+                        return \Illuminate\Routing\Router::isLocalized($patterns, $locales);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\LocalizedMacro::register()
+         * @param mixed $closure
+         * @param mixed $options
+         * @static 
+         */ 
+        public static function localized($closure, $options = [])
+        {
+                        return \Illuminate\Routing\Router::localized($closure, $options);
+        }
+                    /**
+         * 
+         *
+         * @see \CodeZero\LocalizedRoutes\Macros\Route\LocalizedUrlMacro::register()
+         * @param mixed $locale
+         * @param mixed $parameters
+         * @param mixed $absolute
+         * @param mixed $keepQuery
+         * @static 
+         */ 
+        public static function localizedUrl($locale = null, $parameters = null, $absolute = true, $keepQuery = true)
+        {
+                        return \Illuminate\Routing\Router::localizedUrl($locale, $parameters, $absolute, $keepQuery);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Translation { 
+            /**
+     * 
+     *
+     */ 
+        class Translator {
+                    /**
+         * 
+         *
+         * @see \CodeZero\UriTranslator\Macros\Lang\UriMacro::register()
+         * @param mixed $uri
+         * @param mixed $locale
+         * @param mixed $namespace
+         * @static 
+         */ 
+        public static function uri($uri, $locale = null, $namespace = null)
+        {
+                        return \Illuminate\Translation\Translator::uri($uri, $locale, $namespace);
         }
          
     }
@@ -23411,6 +23804,7 @@ namespace  {
             class View extends \Illuminate\Support\Facades\View {}
             class Vite extends \Illuminate\Support\Facades\Vite {}
             class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar {}
+            class LocaleConfig extends \CodeZero\LocalizedRoutes\Facades\LocaleConfig {}
             class Flasher extends \Flasher\Laravel\Facade\Flasher {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
             class DataTables extends \Yajra\DataTables\Facades\DataTables {}

@@ -5,5 +5,5 @@ return [
         'documentation' => 'Documentation',
         'news' => 'news'
     ],
-    'Shop Now' => 'Test'
+    'Shop Now' => 'Shop Now'
 ];

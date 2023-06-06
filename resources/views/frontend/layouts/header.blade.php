@@ -32,38 +32,22 @@
                             <li>
                                 <div class="header-currency">
                                     <div class="currency-dd posr">
-                                        <div class="cur-title1 currency-ttl">
-                                            <div class="cur-usd">
-                                                <span>Currency : USD</span>
-                                                <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
-                                            </div>
-                                            <div class="cur-text-wrapper cur-cury inner-btn currency-opt">
-                                                <div class="inner-text">
-                                                    <span class="usd"><a href="#">Dollar(USD)</a></span>
-                                                </div>
-                                                <div class="inner-text">
-                                                    <span class="cbp"><a href="#">Pound(CBP)</a></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="header-currency">
-                                    <div class="currency-dd posr">
                                         <div class="cur-title2 currency-ttl">
                                             <div class="cur-usd">
-                                                <span>English</span>
-                                                <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
+                                                {{-- @if (!App::isLocale($locale))
+                                                    <span>{{ strtoupper($locale) }}</span>
+                                                    <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
+                                                @endif --}}
                                             </div>
                                             <div class="cur-text-wrapper cur-lanpos inner-btn2 currency-opt">
-                                                <div class="inner-text">
-                                                    <span class="usd"><a href="#">English</a></span>
-                                                </div>
-                                                <div class="inner-text">
-                                                    <span class="cbp"><a href="#">Arabic</a></span>
-                                                </div>
+                                                @if (Route::isLocalized() || Route::isFallback())
+                                                    @foreach (LocaleConfig::getLocales() as $locale)
+                                                        <div class="inner-text">
+                                                            <span class="usd"><a
+                                                                    href="{{ Route::localizedUrl($locale) }}">{{ strtoupper($locale) }}</a></span>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
                                             </div>
 
                                         </div>

@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Long Descriptio</label>
-                                    <textarea class='form-control summernote' name="long_description">{{ $product->long_description }}</textarea>
+                                    <textarea class='form-control summernote' name="long_description">{!! $product->long_description !!}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <div class="control-label mt-2">Produtct Features</div>
