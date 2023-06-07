@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\DataTables\ProductImageGalleryDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductImageGallery;
+use App\Traids\imageUploadTrait;
 use Illuminate\Http\Request;
 
 class ProductImageGalleryController extends Controller
 {
+    use imageUploadTrait;
     /**
      * Display a listing of the resource.
      */
@@ -31,7 +34,22 @@ class ProductImageGalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image.*' => ['required', 'image', 'max:3000']
+        ]);
+
+        /** Handle Image Uploads */
+        $imagePaths = $this->uploadMultiImage($request, 'image', 'uploads');
+
+        foreach($imagePaths as $path){
+            $productImageGallery = new ProductImageGallery();
+            $productImageGallery->image = $path;
+            $productImageGallery->product_id = $request->product;
+            $productImageGallery->save();
+        }
+        toastr('Images for product upload successful!', 'success');
+
+        return redirect()->back();
     }
 
     /**
