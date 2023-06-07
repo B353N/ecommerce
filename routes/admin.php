@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductImageGalleryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,3 +37,4 @@ Route::resource('brand', BrandController::class);
 /** Product Routes */
 Route::get('product/get-subcategories', [ProductController::class, 'getSubCategories'])->name('product.get-subcategories');
 Route::resource('product', ProductController::class);
+Route::resource('products-image-gallery', ProductImageGalleryController::class);
