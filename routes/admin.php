@@ -35,7 +35,7 @@ Route::put('brand/change-feature', [BrandController::class, 'changeFeature'])->n
 Route::put('brand/change-status', [BrandController::class, 'changeStatus'])->name('brand.change-status');
 Route::resource('brand', BrandController::class);
 /** Product Gallery Routes */
-Route::resource('product/image-gallery', ProductImageGalleryController::class);
+Route::resource('product-image-gallery', ProductImageGalleryController::class);
 /** Product Routes */
 Route::get('product/get-subcategories', [ProductController::class, 'getSubCategories'])->name('product.get-subcategories');
 Route::resource('product', ProductController::class);

@@ -14,13 +14,13 @@ return [
      * The fallback locale to use when generating a route URL
      * and the provided locale is not supported.
      */
-    'fallback_locale' => 'bg',
+    'fallback_locale' => '',
 
     /**
      * If you have a main locale, and you want to omit
      * its slug from the URL, specify it here.
      */
-    'omitted_locale' => 'bg',
+    'omitted_locale' => '',
 
     /**
      * Set this option to true if you want to redirect URLs

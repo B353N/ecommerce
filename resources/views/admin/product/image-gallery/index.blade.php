@@ -25,11 +25,11 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.image-gallery.store') }}" action="POST"
+                            <form action="{{ route('admin.products-image-gallery.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Image <code>(Multiple Images)</code></label>
+                                    <label for="">Image <code>(Multiple image supported!)</code></label>
                                     <input type="file" name="image[]" class="form-control" multiple>
                                     <input type="hidden" name="product" value="{{ $product->id }}">
                                 </div>

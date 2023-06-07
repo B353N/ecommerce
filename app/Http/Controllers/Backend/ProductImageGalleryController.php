@@ -34,22 +34,24 @@ class ProductImageGalleryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image.*' => ['required', 'image', 'max:3000']
-        ]);
 
-        /** Handle Image Uploads */
-        $imagePaths = $this->uploadMultiImage($request, 'image', 'uploads');
+        dd($request);
+        // $request->validate([
+        //     'image.*' => ['required', 'image', 'max:3000']
+        // ]);
 
-        foreach($imagePaths as $path){
-            $productImageGallery = new ProductImageGallery();
-            $productImageGallery->image = $path;
-            $productImageGallery->product_id = $request->product;
-            $productImageGallery->save();
-        }
-        toastr('Images for product upload successful!', 'success');
+        // /** Handle Image Uploads */
+        // $imagePaths = $this->uploadMultiImage($request, 'image', 'uploads');
 
-        return redirect()->back();
+        // foreach($imagePaths as $path){
+        //     $productImageGallery = new ProductImageGallery();
+        //     $productImageGallery->image = $path;
+        //     $productImageGallery->product_id = $request->product;
+        //     $productImageGallery->save();
+        // }
+        // toastr('Images for product upload successful!', 'success');
+
+        // return redirect()->back();
     }
 
     /**
