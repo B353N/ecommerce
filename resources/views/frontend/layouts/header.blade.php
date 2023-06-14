@@ -54,15 +54,17 @@
                                     <div class="currency-dd posr">
                                         <div class="cur-title2 currency-ttl">
                                             <div class="cur-usd">
-                                                <span>English</span>
+                                                <span>{{ session()->get('locale') == 'en' ? 'English' : 'Bulgarian' }}</span>
                                                 <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
                                             </div>
                                             <div class="cur-text-wrapper cur-lanpos inner-btn2 currency-opt">
                                                 <div class="inner-text">
-                                                    <span class="usd"><a href="#">English</a></span>
+                                                    <span class="usd"><a
+                                                            href="{{ route('changeLang') }}?lang=en">English</a></span>
                                                 </div>
                                                 <div class="inner-text">
-                                                    <span class="cbp"><a href="#">Arabic</a></span>
+                                                    <span class="cbp"><a
+                                                            href="{{ route('changeLang') }}?lang=bg">Bulgarian</a></span>
                                                 </div>
                                             </div>
 
@@ -122,7 +124,8 @@
                 <div class="col-lg-9 col-md-10 hidden-sm">
                     <nav>
                         <ul class="main-menu">
-                            <li class="{{ setActive(['home']) }}"><a href="{{ route('home') }}">Home</a>
+                            <li class="{{ setActive(['home']) }}"><a
+                                    href="{{ route('home') }}">{{ __('messages.homeBtn') }}</a>
                             </li>
                             <li class="mega-parent"><a href="shop.html">Shop <i class="zmdi zmdi-chevron-down"></i></a>
                                 <div class="mega-menu-area hp1-style1">
