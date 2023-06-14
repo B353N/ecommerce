@@ -12,6 +12,8 @@ return [
     'shopping_cart' => 'Количка',
     'my_account' => 'Mоят профил',
     'login' => 'Вход',
+    'wish_list' => 'Любими',
+    'compare' => 'Сравнения',
 
     /** SHOPPING CART */
 

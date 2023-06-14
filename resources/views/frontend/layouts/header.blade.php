@@ -82,11 +82,9 @@
                     <div class="header-whishlist">
                         <div class="header-whish-compare posr">
                             <div class="header-whish">
-                                <a href="wishlist.html">My Wishlist</a>
+                                <a href="wishlist.html">{{ __('lang.wish_list') }}</a>
                             </div>
-                            <div class="header-compare">
-                                <a href="single-product.html">Compare</a>
-                            </div>
+
                         </div>
                         <div class="header-middle-phone">
                             <span><i class="fa fa-phone"></i>1-888-123-456-89</span>
@@ -227,9 +225,9 @@
                     <div class="col-xs-12">
                         <nav class="active-mobile-menu">
                             <ul>
-                                <li><a href="{{ route('home') }}">Home</a>
+                                <li><a href="{{ route('home') }}">{{ __('lang.homeBtn') }}</a>
                                 </li>
-                                <li><a href="shop.html">Shop</a>
+                                <li><a href="shop.html">{{ __('lang.shop') }}</a>
                                     <ul>
                                         @foreach ($categories as $category)
                                             <li><a href="#">{{ $category->name }}</a>
@@ -248,88 +246,15 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About Us</a>
+                                <li><a href="about.html">{{ __('lang.about_us') }}</a>
                                 </li>
-                                <li><a href="portfolio.html">Portfolio</a>
+                                <li><a href="portfolio.html">{{ __('lang.portfolio') }}</a>
                                 </li>
 
-                                <li><a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-right-sidebar.html">Right Sidebar</a>
-                                        </li>
-                                        <li><a href="blog-fullwidth.html">Fullwidth</a>
-                                        </li>
-                                        <li><a href="single-blog-video.html">Single Video</a>
-                                        </li>
-                                        <li><a href="single-blog-audio.html">Single Audio</a>
-                                        </li>
-                                        <li><a href="single-blog-slider.html">Single Gallery</a>
-                                        </li>
-                                        <li><a href="single-blog.html">Single Image</a>
-                                        </li>
-                                    </ul>
+                                <li><a href="blog.html">{{ __('lang.blog') }}</a>
                                 </li>
-                                <li><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="#">Pages-01</a>
-                                            <ul>
-                                                <li><a href="about.html">About us</a>
-                                                </li>
-                                                <li><a href="404.html">Page 404</a>
-                                                </li>
-                                                <li><a href="portfolio.html">Portfolio</a>
-                                                </li>
-                                                <li><a href="portfolio2.html">Portfolio2</a>
-                                                </li>
-                                                <li><a href="single-product">Single Product</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages-02</a>
-                                            <ul>
-                                                <li><a href="blog-right-sidebar.html">Right Sidebar</a>
-                                                </li>
-                                                <li><a href="single-blog-video.html">Single Video</a>
-                                                </li>
-                                                <li><a href="single-blog-audio.html">Single Audio</a>
-                                                </li>
-                                                <li><a href="single-blog-slider.html">Single Gallery</a>
-                                                </li>
-                                                <li><a href="single-blog.html">Single Image</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages-03</a>
-                                            <ul>
-                                                <li><a href="cart.html">Cart</a>
-                                                </li>
-                                                <li><a href="address.html">Address</a>
-                                                </li>
-                                                <li><a href="checkout.html">Checkout</a>
-                                                </li>
-                                                <li><a href="payment.html">Payment</a>
-                                                </li>
-                                                <li><a href="shipping.html">Shipping</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages-04</a>
-                                            <ul>
-                                                <li><a href="my-account.html">My Account</a>
-                                                </li>
-                                                <li><a href="wishlist.html">Wishlist</a>
-                                                </li>
-                                                <li><a href="login.html">login</a>
-                                                </li>
-                                                <li><a href="shop.html">Dresses</a>
-                                                </li>
-                                                <li><a href="shop.html">T-Shirts</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact Us</a>
+
+                                <li><a href="contact.html">{{ __('lang.contacts') }}</a>
                                 </li>
                             </ul>
                         </nav>

@@ -5,10 +5,11 @@
                 <div class="footer-content-wrapper">
                     <div class="footer-content">
                         <div id="f-about" class="footer-title def-funderline ftitle-about posr">
-                            <h5 class="active-about">About us</h5>
+                            <h5 class="active-about">{{ __('lang.about_us') }}</h5>
                         </div>
                         <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Aenean commodo ligula eget dolor Aenean massa. Portals seize data-driven, tag expedite</p>
+                            <p>Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Aenean
+                                commodo ligula eget dolor Aenean massa. Portals seize data-driven, tag expedite</p>
                             <div class="footer-readmore"><a href="about.html">Read more</a>
                             </div>
                         </div>
@@ -40,7 +41,7 @@
                         </li>
                         <li><a href="shop.html" title="Our stores">Our stores</a>
                         </li>
-                        <li><a href="contact.html" title="Contact us">Contact us</a>
+                        <li><a href="contact.html" title="Contact us">{{ __('lang.contacts') }}</a>
                         </li>
                         <li><a href="index2.html" title="Sitemap">Sitemap</a>
                         </li>
@@ -96,12 +97,13 @@
         <div class="row">
             <div class="col-lg-8 col-md-6 col-sm-12 footer-bottom-left">
                 <div class="footer-bottom-text">
-                    <p>&copy; X-Tina 2023 Направено с <i class="fa fa-heart"></i> от <a href="https://ProWebsite.vip"  rel="noopener">Дигитална Агенция ProWebsite</a></p>
+                    <p>&copy; X-Tina 2023 Направено с <i class="fa fa-heart"></i> от <a href="https://ProWebsite.vip"
+                            rel="noopener">Дигитална Агенция ProWebsite</a></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 footer-bottom-right">
                 <div class="footer-bottom-image">
-                    <a href="#"><img src="{{asset('frontend/images/payment/p.webp')}}" alt="domino" />
+                    <a href="#"><img src="{{ asset('frontend/images/payment/p.webp') }}" alt="domino" />
                     </a>
                 </div>
             </div>

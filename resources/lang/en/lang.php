@@ -12,6 +12,8 @@ return [
     'shopping_cart' => 'Shopping Cart',
     'my_account' => 'My Account',
     'login' => 'Login',
+    'wish_list' => 'My Wishlist',
+    'compare' => 'Compare',
 
     /** SHOPPING CART */
 
