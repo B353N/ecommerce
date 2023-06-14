@@ -16,6 +16,7 @@
 /.dotnet
 /.config
 /.cache
+/.dotnet
 .wget-hsts
 .env
 .env.backup
