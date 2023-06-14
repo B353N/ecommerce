@@ -17,10 +17,10 @@
                     <div class="header-login posr">
                         <ul>
                             @auth()
-                                <li><a href="{{ route('user.dashboard') }}">My Account</a>
+                                <li><a href="{{ route('user.dashboard') }}">{{ __('lang.my_account') }}</a>
                                 </li>
                             @else
-                                <li><a href="{{ route('login') }}">Login/Sign Up</a>
+                                <li><a href="{{ route('login') }}">{{ __('lang.login') }}</a>
                                 </li>
                             @endauth
                         </ul>
@@ -32,29 +32,9 @@
                             <li>
                                 <div class="header-currency">
                                     <div class="currency-dd posr">
-                                        <div class="cur-title1 currency-ttl">
-                                            <div class="cur-usd">
-                                                <span>Currency : USD</span>
-                                                <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
-                                            </div>
-                                            <div class="cur-text-wrapper cur-cury inner-btn currency-opt">
-                                                <div class="inner-text">
-                                                    <span class="usd"><a href="#">Dollar(USD)</a></span>
-                                                </div>
-                                                <div class="inner-text">
-                                                    <span class="cbp"><a href="#">Pound(CBP)</a></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="header-currency">
-                                    <div class="currency-dd posr">
                                         <div class="cur-title2 currency-ttl">
                                             <div class="cur-usd">
-                                                <span>{{ session()->get('locale') == 'en' ? 'English' : 'Bulgarian' }}</span>
+                                                <span>{{ session()->get('locale') == 'en' ? 'English' : 'Български' }}</span>
                                                 <a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
                                             </div>
                                             <div class="cur-text-wrapper cur-lanpos inner-btn2 currency-opt">
@@ -64,7 +44,7 @@
                                                 </div>
                                                 <div class="inner-text">
                                                     <span class="cbp"><a
-                                                            href="{{ route('changeLang') }}?lang=bg">Bulgarian</a></span>
+                                                            href="{{ route('changeLang') }}?lang=bg">Български</a></span>
                                                 </div>
                                             </div>
 
@@ -125,9 +105,10 @@
                     <nav>
                         <ul class="main-menu">
                             <li class="{{ setActive(['home']) }}"><a
-                                    href="{{ route('home') }}">{{ __('messages.homeBtn') }}</a>
+                                    href="{{ route('home') }}">{{ __('lang.homeBtn') }}</a>
                             </li>
-                            <li class="mega-parent"><a href="shop.html">Shop <i class="zmdi zmdi-chevron-down"></i></a>
+                            <li class="mega-parent"><a href="shop.html">{{ __('lang.shop') }} <i
+                                        class="zmdi zmdi-chevron-down"></i></a>
                                 <div class="mega-menu-area hp1-style1">
                                     @foreach ($categories as $category)
                                         <ul class="single-mega-item mega-underline1 mega-underline3">
@@ -144,87 +125,13 @@
                                     @endforeach
                                 </div>
                             </li>
-                            <li class="mega-parent"><a href="about.html">About us</a>
+                            <li class="mega-parent"><a href="about.html">{{ __('lang.about_us') }}</a>
                             </li>
-                            <li><a href="portfolio.html">Portfolio</a>
+                            <li><a href="portfolio.html">{{ __('lang.portfolio') }}</a>
                             </li>
-                            <li class="dropdown2"><a href="blog.html">Blog <i class="zmdi zmdi-chevron-down"></i></a>
-                                <ul class="main-drop firstli">
-                                    <li><a href="blog-right-sidebar.html">Right Sidebar</a>
-                                    </li>
-                                    <li><a href="blog-fullwidth.html">Fullwidth</a>
-                                    </li>
-                                    <li><a href="single-blog-video.html">Single Video</a>
-                                    </li>
-                                    <li><a href="single-blog-audio.html">Single Audio</a>
-                                    </li>
-                                    <li><a href="single-blog-slider.html">Single Gallery</a>
-                                    </li>
-                                    <li><a href="single-blog.html">Single Image</a>
-                                    </li>
-                                </ul>
+                            <li><a href="blog.html">{{ __('lang.blog') }} <i class="zmdi zmdi-chevron-down"></i></a>
                             </li>
-                            <li class="mega-parent"><a href="shop.html">Pages <i class="zmdi zmdi-chevron-down"></i></a>
-                                <div class="mega-menu-area hp1-style2">
-                                    <ul class="single-mega-item single-mega-item2">
-                                        <li class="mega-title"><a>Pages-01</a>
-                                        </li>
-                                        <li><a href="about.html">About us</a>
-                                        </li>
-                                        <li><a href="404.html">Page 404</a>
-                                        </li>
-                                        <li><a href="portfolio.html">Portfolio</a>
-                                        </li>
-                                        <li><a href="portfolio2.html">Portfolio2</a>
-                                        </li>
-                                        <li><a href="single-product.html">Single Product</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="single-mega-item single-mega-item2">
-                                        <li class="mega-title"><a>Pages-02</a>
-                                        </li>
-                                        <li><a href="blog-right-sidebar.html">Right Sidebar</a>
-                                        </li>
-                                        <li><a href="single-blog-video.html">Single Video</a>
-                                        </li>
-                                        <li><a href="single-blog-audio.html">Single Audio</a>
-                                        </li>
-                                        <li><a href="single-blog-slider.html">Single Gallery</a>
-                                        </li>
-                                        <li><a href="single-blog.html">Single Image</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="single-mega-item single-mega-item2">
-                                        <li class="mega-title"><a href="#">Pages-03</a>
-                                        </li>
-                                        <li><a href="cart.html">Cart</a>
-                                        </li>
-                                        <li><a href="address.html">Address</a>
-                                        </li>
-                                        <li><a href="checkout.html">Checkout</a>
-                                        </li>
-                                        <li><a href="payment.html">Payment</a>
-                                        </li>
-                                        <li><a href="shipping.html">Shipping</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="single-mega-item single-mega-item2">
-                                        <li class="mega-title"><a href="#">Pages-04</a>
-                                        </li>
-                                        <li><a href="my-account.html">My Account</a>
-                                        </li>
-                                        <li><a href="wishlist.html">Wishlist</a>
-                                        </li>
-                                        <li><a href="login.html">login</a>
-                                        </li>
-                                        <li><a href="shop.html">Dresses</a>
-                                        </li>
-                                        <li><a href="shop.html">T-Shirts</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="contact.html">Contact us</a>
+                            <li><a href="contact.html">{{ __('lang.contacts') }}</a>
                             </li>
                         </ul>
                     </nav>
@@ -241,11 +148,12 @@
                         </div>
                         <div class="header-cart-area cart-hover-effect">
                             <div class="shopping-cart style-shopping-bag strong-up">
-                                <a href="cart.html"><span><strong>Shopping cart</strong></span></a>
+                                <a href="cart.html"><span><strong>{{ __('lang.shopping_cart') }}</strong></span></a>
                             </div>
                             <div class="shopping-cart">
-                                <a href="cart.html"><span class="cart-item">0 item(s)</span><span
-                                        class="cart-amount"> - $0.00</span></a>
+                                <a href="cart.html"><span class="cart-item">0 {{ __('lang.items') }}</span><span
+                                        class="cart-amount"> -
+                                        0.00 {{ __('lang.lv') }}</span></a>
                             </div>
 
                             <div class="header-cart-box-wrapper cart-position-style1">
@@ -302,7 +210,7 @@
                                 </div>
 
                                 <div class="cart-checkout-btn btn-def-checkout">
-                                    <a href="checkout.html">Check out <i
+                                    <a href="checkout.html">{{ __('lang.checkout') }} <i
                                             class="checkout-dir-icon zmdi zmdi-chevron-right "></i></a>
                                 </div>
                             </div>
