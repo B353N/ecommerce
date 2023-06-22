@@ -32,18 +32,14 @@
             <div class="col-lg-2 col-md-6 col-sm-12">
                 <div class="footer-list-wrapper">
                     <div id="f-info" class="footer-title def-funderline ftitle-info posr">
-                        <h5 class="active">Information</h5>
+                        <h5 class="active">{{ __('lang.information') }}</h5>
                     </div>
                     <ul class="footer-list-text jscroll-info">
-                        <li><a href="shop.html" title="New products">New products</a>
+                        <li><a href="shop.html" title="{{ __('lang.new_products') }}">{{ __('lang.new_products') }}</a>
                         </li>
-                        <li><a href="single-product.html" title="Best sellers">Best sellers</a>
+                        <li><a href="contact.html" title="{{ __('lang.contacts') }}">{{ __('lang.contacts') }}</a>
                         </li>
-                        <li><a href="shop.html" title="Our stores">Our stores</a>
-                        </li>
-                        <li><a href="contact.html" title="Contact us">{{ __('lang.contacts') }}</a>
-                        </li>
-                        <li><a href="index2.html" title="Sitemap">Sitemap</a>
+                        <li><a href="index2.html" title="{{ __('lang.sitemap') }}">{{ __('lang.sitemap') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -51,18 +47,17 @@
             <div class="col-lg-2 col-md-6 col-sm-12">
                 <div class="footer-list-wrapper">
                     <div id="f-myac" class="footer-title def-funderline ftitle-myA posr">
-                        <h5 class="active">My account</h5>
+                        <h5 class="active">{{ __('lang.my_account') }}</h5>
                     </div>
                     <ul class="footer-list-text jscroll-myac">
-                        <li><a href="my-account.html" title="My orders">My orders </a>
+                        <li><a href="my-account.html" title="{{ __('lang.my_orders') }}">{{ __('lang.my_orders') }}
+                            </a>
                         </li>
-                        <li><a href="my-account.html" title="My credit slips">My credit slips </a>
+                        <li><a href="index2.html"
+                                title="{{ __('lang.my_addresses') }}">{{ __('lang.my_addresses') }}</a>
                         </li>
-                        <li><a href="index2.html" title="My addresses">My addresses</a>
-                        </li>
-                        <li><a href="shop.html" title="Specials">Specials</a>
-                        </li>
-                        <li><a href="my-account.html" title="My personal info">My personal info</a>
+                        <li><a href="my-account.html"
+                                title="{{ __('lang.information') }}">{{ __('lang.information') }}</a>
                         </li>
                     </ul>
                 </div>

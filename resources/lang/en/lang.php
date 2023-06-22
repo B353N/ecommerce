@@ -11,6 +11,8 @@ return [
     'contacts' => 'Contact Us',
     'shopping_cart' => 'Shopping Cart',
     'my_account' => 'My Account',
+    'my_orders' => 'My Orders',
+    'my_addresses' => 'My Addresses',
     'login' => 'Login',
     'wish_list' => 'My Wishlist',
     'compare' => 'Compare',
@@ -23,5 +25,10 @@ return [
     /** CURRENTY */
     'leva' => 'leva',
     'lv' => 'lv',
+
+    /** Footer */
+    'information' => 'Information',
+    'new_products' => 'New Products',
+    'sitemap' => 'Sitemap',
 
 ];
