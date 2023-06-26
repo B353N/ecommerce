@@ -31,4 +31,10 @@ return [
     'new_products' => 'New Products',
     'sitemap' => 'Sitemap',
 
+
+    /** Home Page */
+
+    'our_products' => 'Our Products',
+    'feature_products' => 'Featured Products',
+
 ];

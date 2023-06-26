@@ -30,4 +30,10 @@ return [
     'information' => 'Информация',
     'new_products' => 'Нови Продукти',
     'sitemap' => 'Kарта на сайта',
+
+
+    /** Home Page */
+
+    'our_products' => 'Нашите Продукти',
+    'feature_products' => 'Топ Продукти',
 ];

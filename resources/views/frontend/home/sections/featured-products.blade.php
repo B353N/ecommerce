@@ -5,8 +5,8 @@
                 <div class="col-xs-12">
                     <div class="home-featured-head text-center">
                         <div class="section-title title-head">
-                            <h3>Featured Products</h3>
-                            <img src="{{asset('frontend/images/icons/icon-title.jpeg')}}" alt="" />
+                            <h3>{{ __('lang.feature_products') }}</h3>
+                            <img src="{{ asset('frontend/images/icons/icon-title.jpeg') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p2.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p2.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -37,7 +39,9 @@
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +79,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p13.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p13.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -91,7 +97,9 @@
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +139,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p7.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p7.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -141,13 +151,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -186,7 +199,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p8.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p8.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -196,13 +211,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -243,7 +261,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p9.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p9.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -253,13 +273,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -298,7 +321,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p10.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p10.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -308,13 +333,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -355,7 +383,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p11.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p11.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -365,13 +395,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -410,7 +443,9 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="{{asset('frontend/images/product/p6.jpeg')}}" alt="" />
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('frontend/images/product/p6.jpeg') }}"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -420,13 +455,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -467,7 +505,8 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="images/product/p5.jpg" alt="" />
+                                            <a href="single-product.html"><img src="images/product/p5.jpg"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -477,13 +516,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -522,7 +564,8 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="images/product/p4.jpg" alt="" />
+                                            <a href="single-product.html"><img src="images/product/p4.jpg"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -532,13 +575,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -579,7 +625,8 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="images/product/p3.jpg" alt="" />
+                                            <a href="single-product.html"><img src="images/product/p3.jpg"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -589,13 +636,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
@@ -634,7 +684,8 @@
                                     </div>
                                     <div class="priduct-img-wrapper posr">
                                         <div class="product-img">
-                                            <a href="single-product.html"><img src="images/product/p11.jpg" alt="" />
+                                            <a href="single-product.html"><img src="images/product/p11.jpg"
+                                                    alt="" />
                                             </a>
                                         </div>
                                         <div class="product-inner-text">
@@ -644,13 +695,16 @@
                                                     </li>
                                                     <li><a href="index.html"><i class="fa fa-heart-o"></i></a>
                                                     </li>
-                                                    <li><a href="single-product.html"><i class="fa fa-refresh"></i></a>
+                                                    <li><a href="single-product.html"><i
+                                                                class="fa fa-refresh"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="product-btn">
                                                 <div class="product-qview-search">
-                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal" data-bs-target=".modal" href="#"><i class=" product-search fa fa-search"></i> quick View</a>
+                                                    <a class="btn-def btn-product-qview q-view" data-bs-toggle="modal"
+                                                        data-bs-target=".modal" href="#"><i
+                                                            class=" product-search fa fa-search"></i> quick View</a>
                                                 </div>
 
                                             </div>
