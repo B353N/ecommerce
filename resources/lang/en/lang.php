@@ -36,5 +36,6 @@ return [
 
     'our_products' => 'Our Products',
     'feature_products' => 'Featured Products',
-
+    'newslatter_title' => 'SIGN UP FOR SEND NEWSLETTER',
+    'newslatter_text' => 'Join over 1,000 people who get free and fresh content delivered automatically each time we publish.',
 ];
