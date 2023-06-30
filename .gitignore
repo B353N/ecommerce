@@ -16,7 +16,7 @@
 /.dotnet
 /.config
 /.cache
-/.dotnet
+/.dotnet/
 /backup
 .wget-hsts
 .env
@@ -34,3 +34,5 @@ yarn-error.log
 /.vscode
 .bash_history
 mail.xtina.prowebsite.vip
+incbackup/config
+xtina.prowebsite.vip
