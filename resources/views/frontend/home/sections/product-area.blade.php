@@ -40,7 +40,12 @@
                                                         </a>
                                                     </div>
                                                     <div class="product-bottom-price">
-                                                        <span>{{ $product->price }} лв.</span>
+                                                        @if ($product->offer_price != 0)
+                                                            <span>{{ $product->offer_price }} лв</span>
+                                                            <del>{{ $product->price }} лв</del>
+                                                        @else
+                                                            <span>{{ $product->price }} лв</del>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

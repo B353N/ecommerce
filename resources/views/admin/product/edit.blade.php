@@ -58,7 +58,7 @@
                                         <div class="form-group">
                                             <label for="inputState">Sub Category</label>
                                             <select id="inputState" class="form-control sub-category" name="subCategory">
-                                                <option value="">Select</option>
+                                                <option value="0">Select</option>
                                                 @foreach ($subCategories as $subCategory)
                                                     <option @if ($subCategory->id == $product->sub_category_id) selected @endif
                                                         value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
@@ -170,7 +170,7 @@
                                         </option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
                     </div>

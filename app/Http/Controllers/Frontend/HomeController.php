@@ -17,8 +17,9 @@ class HomeController extends Controller
         // Invoking that static method
         $sliders = Slider::where('status', 1)->orderBy('serial', 'asc')->get();
         $homeOffers = HomeOffers::latest()->take(3)->get();
-        $productArea = Product::where('is_top', 1)->orderBy('updated_at', 'asc')->get();
+        $productArea = Product::where('is_top', 1)->orderBy('updated_at', 'desc')->get();
+        $featureArea = Product::where('is_feature', 1)->orderBy('updated_at', 'desc')->get();
 
-        return view('frontend.home.home', compact('sliders', 'homeOffers', 'productArea'));
+        return view('frontend.home.home', compact('sliders', 'homeOffers', 'productArea', 'featureArea'));
     }
 }
