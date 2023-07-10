@@ -62,7 +62,7 @@
     <!--Footer bottom area end-->
 
     <!-- QUICKVIEW PRODUCT -->
-    <div id="quickview-wrapper">
+    {{-- <div id="quickview-wrapper">
         <!-- Modal -->
         <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -181,7 +181,7 @@
             <!-- .modal-dialog -->
         </div>
         <!-- END Modal -->
-    </div>
+    </div> --}}
     <!-- END QUICKVIEW PRODUCT -->
 
     <!-- all js here -->

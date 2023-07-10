@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Frontend\LangController;
+use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,10 @@ require __DIR__.'/auth.php';
 
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+/** Product Controllers */
+Route::get('product-detail/{slug}', [ProductController::class, 'showProduct'])->name('product-detail');
+
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function() {
     Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
