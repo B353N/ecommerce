@@ -9,6 +9,7 @@
 /.vscode-server
 /logs
 /public_html
+/incbackup
 /.ssh
 /.dotnet
 /.cache
@@ -36,3 +37,5 @@ yarn-error.log
 mail.xtina.prowebsite.vip
 incbackup/config
 xtina.prowebsite.vip
+xtina_tina.sql
+
