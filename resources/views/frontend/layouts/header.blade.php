@@ -125,11 +125,27 @@
                             </li>
                             <li class="mega-parent"><a href="about.html">{{ __('lang.about_us') }}</a>
                             </li>
-                            <li><a href="portfolio.html">{{ __('lang.portfolio') }}</a>
-                            </li>
                             <li><a href="blog.html">{{ __('lang.blog') }} <i class="zmdi zmdi-chevron-down"></i></a>
                             </li>
-                            <li><a href="contact.html">{{ __('lang.contacts') }}</a>
+                            <li><a href="{{ route('contacts') }}">{{ __('lang.contacts') }}</a>
+                            </li>
+                            <li class="mega-parent"><a href="{{ route('portfolio') }}">{{ __('lang.treatments') }} <i
+                                        class="zmdi zmdi-chevron-down"></i></a>
+
+                                <div class="mega-menu-area hp1-style1">
+                                    <ul class="single-mega-item mega-underline1 mega-underline3">
+                                        <li class="mega-title"><a href="#">РЕЗЕРВАЦИИ</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="single-mega-item mega-underline1 mega-underline3">
+                                        <li class="mega-title"><a href="#">ПОДАРЪЧЕН ВАУЧЕР</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="single-mega-item mega-underline1 mega-underline3">
+                                        <li class="mega-title"><a href="#">РЕВЮТА</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </nav>

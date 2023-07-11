@@ -38,4 +38,15 @@ return [
     'feature_products' => 'Featured Products',
     'newslatter_title' => 'SIGN UP FOR SEND NEWSLETTER',
     'newslatter_text' => 'Join over 1,000 people who get free and fresh content delivered automatically each time we publish.',
+
+    /** Portfolio */
+    'treatments' => 'Treatments',
+
+    /** Contact Form */
+    'name' => 'Name',
+    'email' => 'Email',
+    'website' => 'Website',
+    'subject' => 'Subject',
+    'message' => 'Write your message',
+    'send' => 'Send',
 ];

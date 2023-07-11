@@ -35,7 +35,7 @@
                                                 <div class="product-bottom-text posr">
                                                     <div class="product-bottom-title deft-underline2">
                                                         <a href="{{ route('product-detail', $product->slug) }}"
-                                                            title="Soluta Dress">
+                                                            title="{{ $product->name }}">
                                                             <h4>{{ $product->name }}</h4>
                                                         </a>
                                                     </div>

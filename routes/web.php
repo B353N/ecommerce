@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\VendorController;
+use App\Http\Controllers\Frontend\ContactsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Frontend\LangController;
+use App\Http\Controllers\Frontend\PortfolioController;
 use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,8 @@ require __DIR__.'/auth.php';
 
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+Route::get('contacts', [ContactsController::class, 'index'])->name('contacts');
 
 /** Product Controllers */
 Route::get('product-detail/{slug}', [ProductController::class, 'showProduct'])->name('product-detail');

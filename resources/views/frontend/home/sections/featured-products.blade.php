@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="priduct-img-wrapper posr">
                                             <div class="product-img">
-                                                <a href="single-product.html"><img
+                                                <a href="{{ route('product-detail', $product->slug) }}"><img
                                                         src="{{ asset($product->thumb_image) }}" alt="" />
                                                 </a>
                                             </div>
@@ -30,7 +30,8 @@
 
                                         <div class="product-bottom-text posr">
                                             <div class="product-bottom-title deft-underline2">
-                                                <a href="#" title="{{ $product->name }}">
+                                                <a href="{{ route('product-detail', $product->slug) }}"
+                                                    title="{{ $product->name }}">
                                                     <h4>{{ $product->name }}</h4>
                                                 </a>
                                             </div>
