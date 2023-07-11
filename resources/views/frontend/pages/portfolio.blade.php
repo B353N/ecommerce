@@ -310,36 +310,13 @@
                <div class="row">
                    <div class="brand-slider-wrapper">
                        <div class="active-brand-owl def-owl">
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb1.jpg" alt="Domino" />
+                           @foreach ($brands as $brand)
+                               <div class="col-md-2">
+                                   <div class="brand-image">
+                                       <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" />
+                                   </div>
                                </div>
-                           </div>
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb2.jpg" alt="Domino" />
-                               </div>
-                           </div>
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb3.jpg" alt="Domino" />
-                               </div>
-                           </div>
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb4.jpg" alt="Domino" />
-                               </div>
-                           </div>
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb5.jpg" alt="Domino" />
-                               </div>
-                           </div>
-                           <div class="col-md-2">
-                               <div class="brand-image">
-                                   <img src="images/brand/mb6.jpg" alt="Domino" />
-                               </div>
-                           </div>
+                           @endforeach
                        </div>
                    </div>
                </div>

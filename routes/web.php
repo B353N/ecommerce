@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\VendorController;
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ContactsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserDashboardController;
@@ -35,10 +36,11 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+/** Pages */
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('contacts', [ContactsController::class, 'index'])->name('contacts');
+Route::get('about', [AboutController::class, 'index'])->name('about');
 
 /** Product Controllers */
 Route::get('product-detail/{slug}', [ProductController::class, 'showProduct'])->name('product-detail');

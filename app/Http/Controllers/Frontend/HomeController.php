@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\HomeOffers;
 use App\Models\Product;
 use App\Models\Slider;
@@ -19,7 +20,8 @@ class HomeController extends Controller
         $homeOffers = HomeOffers::latest()->take(3)->get();
         $productArea = Product::where('is_top', 1)->orderBy('updated_at', 'desc')->get();
         $featureArea = Product::where('is_feature', 1)->orderBy('updated_at', 'desc')->get();
+        $brands = Brand::all();
 
-        return view('frontend.home.home', compact('sliders', 'homeOffers', 'productArea', 'featureArea'));
+        return view('frontend.home.home', compact('sliders', 'homeOffers', 'productArea', 'featureArea', 'brands'));
     }
 }

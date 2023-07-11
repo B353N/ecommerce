@@ -49,4 +49,7 @@ return [
     'subject' => 'Subject',
     'message' => 'Write your message',
     'send' => 'Send',
+
+    /** About Us */
+    'about' => 'About Us',
 ];

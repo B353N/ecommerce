@@ -123,7 +123,7 @@
                                     @endforeach
                                 </div>
                             </li>
-                            <li class="mega-parent"><a href="about.html">{{ __('lang.about_us') }}</a>
+                            <li class="mega-parent"><a href="{{ route('about') }}">{{ __('lang.about_us') }}</a>
                             </li>
                             <li><a href="blog.html">{{ __('lang.blog') }} <i class="zmdi zmdi-chevron-down"></i></a>
                             </li>

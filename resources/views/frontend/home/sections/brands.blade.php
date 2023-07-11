@@ -3,36 +3,13 @@
         <div class="row">
             <div class="brand-slider-wrapper">
                 <div class="active-brand-owl def-owl">
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb1.jpeg')}}" alt="Domino" />
+                    @foreach ($brands as $brand)
+                        <div class="col-md-2">
+                            <div class="brand-image">
+                                <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb2.jpeg')}}" alt="Domino" />
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb3.jpeg')}}" alt="Domino" />
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb4.jpeg')}}" alt="Domino" />
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb5.jpeg')}}" alt="Domino" />
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="brand-image">
-                            <img src="{{asset('frontend/images/brand/mb6.jpeg')}}" alt="Domino" />
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

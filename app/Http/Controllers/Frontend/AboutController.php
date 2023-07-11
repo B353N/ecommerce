@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 
-class PortfolioController extends Controller
+class AboutController extends Controller
 {
-   public function index()
-   {
+    public function index()
+    {
         $brands = Brand::all();
-        return view('frontend.pages.portfolio', compact('brands'));
-   }
+        return view('frontend.pages.about', compact('brands'));
+    }
 }
