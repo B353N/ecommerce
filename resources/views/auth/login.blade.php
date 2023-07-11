@@ -11,7 +11,7 @@
                         <ul>
                             <li>
                                 <div class="breadcrumbs-icon1">
-                                    <a href="/"  title="Return to home"><i class="fa fa-home"></i></a>
+                                    <a href="/" title="Return to home"><i class="fa fa-home"></i></a>
                                 </div>
                             </li>
                             <li> Authentication</li>
@@ -57,23 +57,26 @@
                             @csrf
                             <div class="lp-input">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" value="{{old('name')}}" required/>
+                                <input type="text" id="name" name="name" value="{{ old('name') }}" required />
                             </div>
                             <div class="lp-input">
                                 <label for="emailleft">Email address</label>
-                                <input type="email" id="email" name="email" value="{{old('email')}}" required/>
+                                <input type="email" id="email" name="email" value="{{ old('email') }}" required />
                             </div>
                             <div class="lp-input">
                                 <label for="emailleft">Password</label>
-                                <input type="password" id="password" name="password" required autocomplete="new-password"/>
+                                <input type="password" id="password" name="password" required
+                                    autocomplete="new-password" />
                             </div>
                             <div class="lp-input">
                                 <label for="password_confirmation">Password Confirmation</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" required autocomplete="new-password"/>
+                                <input type="password" id="password_confirmation" name="password_confirmation" required
+                                    autocomplete="new-password" />
                             </div>
                         </form>
                         <div class=" lp-account-btn btn-ac ">
-                            <a href="javascript:;" onclick="document.getElementById('register').submit();"><i class="fa fa-user" aria-hidden="true"></i> Create an account</a>
+                            <a href="javascript:;" onclick="document.getElementById('register').submit();"><i
+                                    class="fa fa-user" aria-hidden="true"></i> Create an account</a>
                         </div>
                     </div>
                 </div>
@@ -89,18 +92,22 @@
                             @csrf
                             <div class="lp-input">
                                 <label for="email">Email address</label>
-                                <input type="email" id="email" name="email" value="{{old('email')}}" required autocomplete="email"/>
+                                <input type="email" id="email" name="email" value="{{ old('email') }}" required
+                                    autocomplete="email" />
                             </div>
                             <div class="lp-input">
                                 <label for="password">Password</label>
-                                <input type="password" id="password" name="password" required autocomplete="current-password"/>
+                                <input type="password" id="password" name="password" required
+                                    autocomplete="current-password" />
                             </div>
                         </form>
                         <div class="" style="padding-top: 7px;">
-                            <a href="{{route('password.request')}}">Forgot Password <i class="fa fa-question" aria-hidden="true"></i></a>
+                            <a href="{{ route('password.request') }}">Forgot Password <i class="fa fa-question"
+                                    aria-hidden="true"></i></a>
                         </div>
                         <div class=" lp-account-btn btn-ac btn-ac2">
-                            <a href="javascript:;" onclick="document.getElementById('login').submit();"><i class="fa fa-lock" aria-hidden="true"></i>Sign In</a>
+                            <a href="javascript:;" onclick="document.getElementById('login').submit();"><i
+                                    class="fa fa-lock" aria-hidden="true"></i>Sign In</a>
                         </div>
                     </div>
                 </div>
