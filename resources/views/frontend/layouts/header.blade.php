@@ -105,17 +105,19 @@
                             <li class="{{ setActive(['home']) }}"><a
                                     href="{{ route('home') }}">{{ __('lang.homeBtn') }}</a>
                             </li>
-                            <li class="mega-parent"><a href="shop.html">{{ __('lang.shop') }} <i
+                            <li class="mega-parent"><a href="/store">{{ __('lang.shop') }} <i
                                         class="zmdi zmdi-chevron-down"></i></a>
                                 <div class="mega-menu-area hp1-style1">
                                     @foreach ($categories as $category)
                                         <ul class="single-mega-item mega-underline1 mega-underline3">
-                                            <li class="mega-title"><a href="#"><i
+                                            <li class="mega-title"><a
+                                                    href="{{ route('shop.byCat', $category->slug) }}"><i
                                                         class="{{ $category->icon }}"></i> {{ $category->name }}</a>
                                             </li>
                                             @if ($category->subCategories != null)
                                                 @foreach ($category->subCategories as $subCategory)
-                                                    <li><a href="shop-fullwidth.html">{{ $subCategory->name }}</a>
+                                                    <li><a
+                                                            href="{{ route('shop.bySubCat', $subCategory->slug) }}">{{ $subCategory->name }}</a>
                                                     </li>
                                                 @endforeach
                                             @endif
@@ -125,8 +127,7 @@
                             </li>
                             <li class="mega-parent"><a href="{{ route('about') }}">{{ __('lang.about_us') }}</a>
                             </li>
-                            <li><a href="blog.html">{{ __('lang.blog') }} <i class="zmdi zmdi-chevron-down"></i></a>
-                            </li>
+
                             <li><a href="{{ route('contacts') }}">{{ __('lang.contacts') }}</a>
                             </li>
                             <li class="mega-parent"><a href="{{ route('portfolio') }}">{{ __('lang.treatments') }} <i
