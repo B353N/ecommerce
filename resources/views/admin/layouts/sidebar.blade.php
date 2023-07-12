@@ -37,7 +37,7 @@
             </li>
             <li class="menu-header">CMS</li>
 
-            <li class="dropdown {{ setActive(['admin.slider.*', 'admin.homeOffers.*']) }}">
+            <li class="dropdown {{ setActive(['admin.slider.*', 'admin.homeOffers.*', 'admin.about.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Manage Website</span></a>
                 <ul class="dropdown-menu">
@@ -45,6 +45,8 @@
                             href="{{ route('admin.slider.index') }}">Slider</a></li>
                     <li class="{{ setActive(['admin.homeOffers.*']) }}"><a class="nav-link"
                             href="{{ route('admin.homeOffers.index') }}">Home Offers</a></li>
+                    <li class="{{ setActive(['admin.about.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.about.index') }}">About</a></li>
                 </ul>
             </li>
 

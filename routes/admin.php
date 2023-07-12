@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -38,3 +39,5 @@ Route::resource('brand', BrandController::class);
 Route::get('product/get-subcategories', [ProductController::class, 'getSubCategories'])->name('product.get-subcategories');
 Route::resource('product', ProductController::class);
 Route::resource('products-image-gallery', ProductImageGalleryController::class);
+/** About Routes */
+Route::resource('about', AboutController::class);
